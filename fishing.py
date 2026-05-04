@@ -11,6 +11,7 @@ import numpy as np
 import controlfishing as controlfishing
 import traceback
 import buy_bait
+import ctypes
 def resource_path(relative_path):
     try:
         base_path = sys._MEIPASS
@@ -260,5 +261,44 @@ def find_image_in_window(template_path, hwnd, timeout=0, interval=0.2):
             pass
         time.sleep(interval)
     return None
+
+def enable_dpi_awareness():
+    user32 = ctypes.WinDLL("user32", use_last_error=True)
+
+    try:
+        # Windows 10 1607+
+        user32.SetProcessDpiAwarenessContext(ctypes.c_void_p(-4))
+        return
+    except Exception:
+        pass
+
+    try:
+        # Windows 8.1+
+        shcore = ctypes.WinDLL("shcore", use_last_error=True)
+        shcore.SetProcessDpiAwareness(2)  # PROCESS_PER_MONITOR_DPI_AWARE
+        return
+    except Exception:
+        pass
+
+    try:
+        user32.SetProcessDPIAware()
+    except Exception:
+        pass
+
 if __name__ == "__main__":
+
+    enable_dpi_awareness() # 防止因为windows UI缩放导致的坐标不准确问题
+
+    def enum_cb(hwnd, _):
+        if win32gui.IsWindowVisible(hwnd):
+            title = win32gui.GetWindowText(hwnd)
+            # 只显示标题包含“异环”，且不包含“异环薄荷AI”的窗口
+            if "异环" in title and "异环薄荷AI" not in title:
+                # self.fishing_window_combo.addItem(title, hwnd)
+                print(f"找到窗口: {title} (句柄: {hwnd})")
+                os.environ["FISHING_TARGET_HWND"] = str(hwnd)
+
+
+  
+    win32gui.EnumWindows(enum_cb, None)
     main()
