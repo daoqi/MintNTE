@@ -3,12 +3,16 @@ name: 打包并发布 MintNTE
 on:
   push:
     tags:
-      - 'v*'          # 当你推送 v1.0.0 这样的标签时自动打包
-  workflow_dispatch:   # 允许手动触发
+      - 'v*'
+  workflow_dispatch:
+
+# 授予工作流创建 Release 的权限
+permissions:
+  contents: write
 
 jobs:
   build:
-    runs-on: windows-latest   # 用 Windows 环境
+    runs-on: windows-latest
     steps:
       - name: 检出代码
         uses: actions/checkout@v4

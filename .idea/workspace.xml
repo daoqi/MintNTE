@@ -25,18 +25,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "daoqi"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;daoqi&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/daoqi/MintNTE.git",
-    "accountId": "71cb73c5-c4bf-4b04-9900-615deb846c72"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/daoqi/MintNTE.git&quot;,
+    &quot;accountId&quot;: &quot;71cb73c5-c4bf-4b04-9900-615deb846c72&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -46,46 +46,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.1.executor": "Run",
-    "Python.NET_click.executor": "Run",
-    "Python.PickColorUI.executor": "Run",
-    "Python.Task_core.executor": "Run",
-    "Python.UI2.executor": "Run",
-    "Python.debug_fishing_detection.executor": "Run",
-    "Python.main (1).executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.monthly_card.executor": "Run",
-    "Python.python main.py.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.test_background_click.executor": "Run",
-    "Python.test_find_click.executor": "Run",
-    "Python.test_find_huobi.executor": "Run",
-    "Python.tracker.executor": "Run",
-    "Python.ui.executor": "Run",
-    "Python.ui3 (1).executor": "Run",
-    "Python.ui3.executor": "Run",
-    "Python.ui4.executor": "Run",
-    "Python.updater.executor": "Run",
-    "Python.web_panel.executor": "Run",
-    "Python.window_spy_popup.executor": "Run",
-    "Python.z.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Github/MontNET",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "two.files.diff.last.used.file": "D:/Github/MontNET/MintNTE.log",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.NET_click.executor&quot;: &quot;Run&quot;,
+    &quot;Python.PickColorUI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Task_core.executor&quot;: &quot;Run&quot;,
+    &quot;Python.UI2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.debug_fishing_detection.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.monthly_card.executor&quot;: &quot;Run&quot;,
+    &quot;Python.python main.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_background_click.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_find_click.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_find_huobi.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tracker.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ui3 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.ui3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ui4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.updater.executor&quot;: &quot;Run&quot;,
+    &quot;Python.web_panel.executor&quot;: &quot;Run&quot;,
+    &quot;Python.window_spy_popup.executor&quot;: &quot;Run&quot;,
+    &quot;Python.z.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Github/MontNET&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;D:/Github/MontNET/MintNTE.log&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Github\MontNET" />
