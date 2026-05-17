@@ -1,0 +1,13 @@
+PyQt5>=5.15.0
+opencv-python>=4.5.0
+numpy>=1.21.0
+Pillow>=9.0.0
+pywin32>=305
+pydirectinput>=1.0.4
+keyboard>=0.13.5
+mouse>=0.7.1
+pygame>=2.6.1
+dxcam>=0.3.0
+psutil>=5.9.8
+pyinstaller>=6.0.0
+windows-capture
