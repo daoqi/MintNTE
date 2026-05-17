@@ -1,0 +1,579 @@
+import sys, os, json, random, math, logging
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+
+# ========== 日志（仅文件+控制台） ==========
+LOG_FILE = "neon_console.log"
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s",
+                    handlers=[logging.FileHandler(LOG_FILE, encoding="utf-8"), logging.StreamHandler()])
+logger = logging.getLogger(__name__)
+QApplication.setAttribute(Qt.AA_EnableHighDpiScaling, True)
+QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps, True)
+
+CONFIG_FILE = "config.json"
+DEFAULT_CONFIG = {"theme": "默认", "window_width": 1000, "window_height": 600, "last_page": 0, "particles_enabled": True}
+def load_config():
+    if os.path.exists(CONFIG_FILE):
+        try:
+            with open(CONFIG_FILE, "r", encoding="utf-8") as f: return json.load(f)
+        except: pass
+    return DEFAULT_CONFIG.copy()
+def save_config(cfg):
+    try:
+        with open(CONFIG_FILE, "w", encoding="utf-8") as f: json.dump(cfg, f, indent=4, ensure_ascii=False)
+    except: pass
+
+class QTextEditHandler(logging.Handler, QObject):
+    """供独立日志窗口使用的处理器（可后续启用）"""
+    new_log = pyqtSignal(str)
+    def __init__(self):
+        logging.Handler.__init__(self); QObject.__init__(self)
+        self.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(message)s"))
+    def emit(self, record): self.new_log.emit(self.format(record))
+
+THEMES = {
+    "默认": {
+        "bg": "#0a0a18", "sidebar_bg": "#12122a", "panel_bg": "#0d0d1a",
+        "toolbar_bg": "#1a1a2e", "breadcrumb_color": "#00f0ff",
+        "btn_colors": ["#00f0ff","#39ff14","#ff003c","#ffd700","#ff44cc","#a200ff"],
+        "page_title_color": "#ffffff", "log_bg": "#12122a", "log_text": "#aaaaff",
+        "grid_line_color": "#1a3a5a", "scanline_color": "#1a3a5a"
+    },
+    "极光紫": {
+        "bg": "#0a0a18", "sidebar_bg": "#1a0a2a", "panel_bg": "#0d0d1a",
+        "toolbar_bg": "#1a0a2a", "breadcrumb_color": "#d400ff",
+        "btn_colors": ["#a200ff","#d400ff","#ff00ff","#ff44cc","#fe019a","#a200ff"],
+        "page_title_color": "#e0b0ff", "log_bg": "#1a0a2a", "log_text": "#c0a0ff",
+        "grid_line_color": "#2a1a4a", "scanline_color": "#2a1a4a"
+    },
+    "赛博粉": {
+        "bg": "#1a0a1a", "sidebar_bg": "#2a122a", "panel_bg": "#1d0d1d",
+        "toolbar_bg": "#2a122a", "breadcrumb_color": "#ff69b4",
+        "btn_colors": ["#ff44cc","#ff69b4","#ff1493","#ff00ff","#ff8c00","#ff44cc"],
+        "page_title_color": "#ffb0ff", "log_bg": "#2a122a", "log_text": "#ffb0ff",
+        "grid_line_color": "#3a1a3a", "scanline_color": "#3a1a3a"
+    },
+    "荧光蓝": {
+        "bg": "#0a1a2a", "sidebar_bg": "#122a3a", "panel_bg": "#0d1d2d",
+        "toolbar_bg": "#122a3a", "breadcrumb_color": "#00bfff",
+        "btn_colors": ["#00f0ff","#00bfff","#1e90ff","#00ced1","#40e0d0","#00f0ff"],
+        "page_title_color": "#b0e0ff", "log_bg": "#122a3a", "log_text": "#b0e0ff",
+        "grid_line_color": "#1a3a5a", "scanline_color": "#1a3a5a"
+    },
+}
+
+# ========== 粒子层（颜色跟随按钮） ==========
+class ParticleOverlay(QWidget):
+    def __init__(self, parent):
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_TransparentForMouseEvents, True)
+        self.setAttribute(Qt.WA_NoSystemBackground, True)
+        self.setAttribute(Qt.WA_TranslucentBackground, True)
+        self.particles = []
+        self.mouse_pos = QPoint(0, 0)
+        self.mouse_inside = False
+        self.current_style = "star"
+        self.enabled = True
+        self.particle_color = QColor("#ffffff")
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.update_particles)
+
+    def start_particles(self):
+        if self.enabled and not self.timer.isActive(): self.timer.start(16)
+    def stop_particles(self):
+        if self.timer.isActive(): self.timer.stop()
+        self.particles.clear(); self.update()
+    def set_enabled(self, enabled):
+        self.enabled = enabled
+        if not enabled: self.timer.stop(); self.particles.clear(); self.update()
+        else: self.timer.start(16)
+    def set_particle_style(self, style):
+        self.current_style = style; self.particles.clear()
+    def set_particle_color(self, color):
+        self.particle_color = QColor(color)
+
+    def update_particles(self):
+        if self.mouse_inside and self.enabled:
+            for _ in range(3):
+                self.particles.append({
+                    'x': self.mouse_pos.x(), 'y': self.mouse_pos.y(),
+                    'vx': random.uniform(-1.5, 1.5),
+                    'vy': random.uniform(0.5, 2.5),
+                    'life': random.uniform(0.5, 1.0),
+                    'max_life': 1.0,
+                    'size': random.randint(3, 7),
+                    'color': QColor(self.particle_color),
+                    'angle': random.uniform(0, 360)
+                })
+        for p in self.particles:
+            p['x'] += p['vx']; p['y'] += p['vy']; p['life'] -= 0.01; p['angle'] += 2
+        self.particles = [p for p in self.particles if p['life'] > 0]
+        self.update()
+
+    def paintEvent(self, event):
+        painter = QPainter(self)
+        painter.setRenderHint(QPainter.Antialiasing)
+        for p in self.particles:
+            ratio = p['life'] / p['max_life']
+            alpha = int(255 * ratio); size = p['size'] * ratio
+            if size < 1: continue
+            color = QColor(p['color']); color.setAlpha(alpha)
+            painter.setBrush(QBrush(color)); painter.setPen(Qt.NoPen)
+            painter.save()
+            painter.translate(p['x'], p['y'])
+            if self.current_style == "star": self.draw_star(painter, size, p['angle'])
+            elif self.current_style == "heart": self.draw_heart(painter, size)
+            elif self.current_style == "wing": self.draw_wing(painter, size, p['angle'])
+            elif self.current_style == "diamond": self.draw_diamond(painter, size, p['angle'])
+            painter.restore()
+
+    def rotate_point(self, pt, angle):
+        x,y=pt; rad=math.radians(angle)
+        return x*math.cos(rad)-y*math.sin(rad), x*math.sin(rad)+y*math.cos(rad)
+
+    def draw_star(self, painter, size, angle):
+        pts=[]
+        for i in range(10):
+            r = size if i%2==0 else size*0.4
+            theta = math.radians(angle + i*36)
+            pts.append((r*math.cos(theta), r*math.sin(theta)))
+        painter.drawPolygon(QPolygonF([QPointF(x,y) for x,y in pts]))
+    def draw_heart(self, painter, size):
+        path=QPainterPath(); path.moveTo(0,size*0.6)
+        path.cubicTo(-size*0.5,-size*0.3,-size*0.5,-size*0.8,0,-size*0.3)
+        path.cubicTo(size*0.5,-size*0.8,size*0.5,-size*0.3,0,size*0.6); painter.drawPath(path)
+    def draw_wing(self, painter, size, angle):
+        s=size*1.2; path=QPainterPath()
+        def wp(x,y): return self.rotate_point((x,y), angle)
+        path.moveTo(*wp(0,-s*0.3)); path.quadTo(*wp(-s*0.6,-s*0.9),*wp(-s*0.9,-s*0.4))
+        path.quadTo(*wp(-s*0.5,s*0.1),*wp(0,s*0.5)); path.quadTo(*wp(s*0.5,s*0.1),*wp(s*0.9,-s*0.4))
+        path.quadTo(*wp(s*0.6,-s*0.9),*wp(0,-s*0.3)); painter.drawPath(path)
+    def draw_diamond(self, painter, size, angle):
+        pts=[(0,-size),(size*0.6,0),(0,size),(-size*0.6,0)]
+        rotated=[self.rotate_point(p,angle) for p in pts]
+        painter.drawPolygon(QPolygonF([QPointF(x,y) for x,y in rotated]))
+
+# ========== 全局鼠标追踪 ==========
+class GlobalMouseTracker(QObject):
+    def __init__(self, overlay, main_window):
+        super().__init__(main_window); self.overlay=overlay; self.main_window=main_window
+    def eventFilter(self, obj, event):
+        if event.type()==QEvent.MouseMove:
+            global_pos=QCursor.pos()
+            if self.main_window.geometry().contains(global_pos):
+                local_pos=self.overlay.mapFromGlobal(global_pos)
+                self.overlay.mouse_pos=local_pos
+                if not self.overlay.mouse_inside: self.overlay.mouse_inside=True
+            else:
+                if self.overlay.mouse_inside:
+                    self.overlay.mouse_inside=False; self.overlay.particles.clear(); self.overlay.update()
+            return False
+        return super().eventFilter(obj, event)
+
+# ========== 按钮（冲击波 + Q弹黑圈） ==========
+class NeonSelectButton(QPushButton):
+    def __init__(self, text, neon_color, parent=None):
+        super().__init__(text, parent)
+        self.neon_color = QColor(neon_color)
+        self._selected = False
+        self.offset = 0.0               # 跑马灯流动位置
+        self.breathe_alpha = 255        # 跑马灯呼吸透明度
+        self.breathe_dir = -1           # 呼吸方向
+        self.ripple_alpha = 0
+        self.ripple_radius = 0
+        self._scale_factor = 1.0
+        self.shock_alpha = 0
+        self.shock_radius = 0
+
+        self.setFixedSize(120, 50)
+        self.setCheckable(True)
+        self.toggled.connect(self._on_toggled)
+        self.clicked.connect(self._start_click_anim)
+        self._update_style()
+        self.glow = QGraphicsDropShadowEffect(self)
+        self.glow.setColor(self.neon_color)
+        self.glow.setOffset(0, 0)
+        self.glow.setBlurRadius(28)
+        self.setGraphicsEffect(self.glow)
+
+        # 动画定时器
+        self.anim_timer = QTimer(self)
+        self.anim_timer.timeout.connect(self._animate)
+        self.anim_timer.setInterval(30)
+
+        self.ripple_timer = QTimer(self)
+        self.ripple_timer.timeout.connect(self._ripple_animate)
+
+        self.scale_anim = QPropertyAnimation(self, b"scale_factor")
+        self.scale_anim.setDuration(250)
+        self.scale_anim.setKeyValues([(0.0, 1.0), (0.4, 1.12), (0.7, 0.96), (1.0, 1.0)])
+        self.destroyed.connect(self.stop_all_timers)
+
+    def get_scale_factor(self):
+        return self._scale_factor
+    def set_scale_factor(self, val):
+        self._scale_factor = val
+        self.update()
+    scale_factor = pyqtProperty(float, get_scale_factor, set_scale_factor)
+
+    def _start_click_anim(self):
+        self.ripple_alpha = 255
+        self.ripple_radius = 0
+        if self.ripple_timer.isActive():
+            self.ripple_timer.stop()
+        self.ripple_timer.start(16)
+        self.shock_alpha = 255
+        self.shock_radius = 0
+        self.scale_anim.stop()
+        self.scale_anim.start()
+
+    def _update_style(self):
+        color_name = self.neon_color.name()
+        self.setStyleSheet(f"""
+            QPushButton {{
+                background-color: #1a1a2e;
+                color: {color_name};
+                border: none;
+                border-radius: 18px;
+                font-size: 15px;
+                font-weight: bold;
+                padding: 0px 12px;
+            }}
+            QPushButton:hover {{
+                background-color: {color_name};
+                color: #0a0a18;
+            }}
+        """)
+
+    def set_neon_color(self, color_str):
+        self.neon_color = QColor(color_str)
+        self._update_style()
+        self.glow.setColor(self.neon_color)
+        self.update()
+
+    def _on_toggled(self, checked):
+        self._selected = checked
+        if checked:
+            if not self.anim_timer.isActive():
+                self.anim_timer.start()
+        else:
+            if self.anim_timer.isActive():
+                self.anim_timer.stop()
+        self.update()
+
+    def _animate(self):
+        self.offset += 0.02
+        if self.offset >= 1.0:
+            self.offset -= 1.0
+        self.breathe_alpha += self.breathe_dir * 3
+        if self.breathe_alpha >= 255:
+            self.breathe_alpha = 255
+            self.breathe_dir = -1
+        elif self.breathe_alpha <= 80:
+            self.breathe_alpha = 80
+            self.breathe_dir = 1
+        self.update()
+
+    def _ripple_animate(self):
+        self.ripple_radius += 4
+        self.ripple_alpha -= 10
+        if self.ripple_alpha <= 0:
+            self.ripple_timer.stop()
+        self.shock_radius += 6
+        self.shock_alpha -= 12
+        if self.shock_alpha <= 0:
+            self.shock_alpha = 0
+        self.update()
+
+    def paintEvent(self, event):
+        painter = QPainter(self)
+        painter.setRenderHint(QPainter.Antialiasing)
+        # 基础背景和文字
+        super().paintEvent(event)
+
+        if self._selected:
+            painter.save()
+            cx, cy = self.rect().center().x(), self.rect().center().y()
+            painter.translate(cx, cy)
+            painter.scale(self._scale_factor, self._scale_factor)
+            painter.translate(-cx, -cy)
+            margin = 8
+            rect = self.rect().adjusted(margin, margin, -margin, -margin)
+            if rect.width() > 0 and rect.height() > 0:
+                radius = rect.height() / 2
+
+                # 黑色底层描边
+                painter.setPen(QPen(QColor(0, 0, 0), 5))
+                painter.setBrush(Qt.NoBrush)
+                painter.drawRoundedRect(rect, radius, radius)
+
+                # 跑马灯光带
+                path = QPainterPath()
+                path.addRoundedRect(QRectF(rect), radius, radius)
+                stroker = QPainterPathStroker()
+                stroker.setWidth(5)
+                stroker.setCapStyle(Qt.RoundCap)
+                stroker.setJoinStyle(Qt.RoundJoin)
+                outline = stroker.createStroke(path)
+                painter.setClipPath(outline)
+
+                gro_rect = rect.adjusted(-30, -30, 30, 30)
+                gradient = QLinearGradient(
+                    gro_rect.left() + self.offset * gro_rect.width(), 0,
+                    gro_rect.left() + (self.offset + 0.15) * gro_rect.width(), 0
+                )
+                light = QColor(self.neon_color)
+                light.setAlpha(self.breathe_alpha)
+                trans = QColor(self.neon_color)
+                trans.setAlpha(0)
+                gradient.setColorAt(0.0, trans)
+                gradient.setColorAt(0.4, light)
+                gradient.setColorAt(0.6, light)
+                gradient.setColorAt(1.0, trans)
+                painter.setPen(Qt.NoPen)
+                painter.setBrush(QBrush(gradient))
+                painter.drawRect(gro_rect)
+
+            painter.restore()
+
+        # 冲击波
+        if self.shock_alpha > 0:
+            shock_color = QColor(self.neon_color)
+            shock_color.setAlpha(self.shock_alpha)
+            painter.setPen(QPen(shock_color, 4))
+            painter.setBrush(Qt.NoBrush)
+            painter.drawEllipse(self.rect().center(), self.shock_radius, self.shock_radius)
+
+        # 扩散光圈
+        if self.ripple_alpha > 0:
+            ripple_color = QColor(self.neon_color)
+            ripple_color.setAlpha(self.ripple_alpha)
+            painter.setPen(QPen(ripple_color, 3))
+            painter.setBrush(Qt.NoBrush)
+            painter.drawEllipse(self.rect().center(), self.ripple_radius, self.ripple_radius)
+
+    def stop_all_timers(self):
+        for t in [self.anim_timer, self.ripple_timer]:
+            if t.isActive():
+                t.stop()
+        self.scale_anim.stop()
+
+# ========== 扫描线 ==========
+class ScanlineWidget(QWidget):
+    def __init__(self, parent, line_color):
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_TransparentForMouseEvents, True)
+        self.line_pos = 0; self.line_color = QColor(line_color)
+        self.timer = QTimer(self); self.timer.timeout.connect(self._update_line); self.timer.start(50)
+    def _update_line(self):
+        self.line_pos = (self.line_pos + 2) % self.height(); self.update()
+    def paintEvent(self, event):
+        painter = QPainter(self); painter.setPen(QPen(self.line_color, 1, Qt.DashLine))
+        painter.drawLine(0, self.line_pos, self.width(), self.line_pos)
+    def update_color(self, color_str):
+        self.line_color = QColor(color_str)
+
+# ========== 网格背景 ==========
+class GridPanel(QWidget):
+    def __init__(self, grid_color, scanline_color):
+        super().__init__()
+        self.setAttribute(Qt.WA_StyledBackground, True)
+        self.grid_color = QColor(grid_color); self.scanline_color = QColor(scanline_color)
+        self.scanline = ScanlineWidget(self, scanline_color)
+    def paintEvent(self, event):
+        super().paintEvent(event)
+        painter = QPainter(self); pen = QPen(self.grid_color); pen.setWidth(1); painter.setPen(pen)
+        w, h = self.width(), self.height(); step = 30
+        for x in range(0, w + step, step):
+            painter.drawLine(x, 0, x - h, h)
+        for y in range(0, h + step, step):
+            painter.drawLine(0, y, w, y - w)
+    def resizeEvent(self, event):
+        self.scanline.setGeometry(0,0,self.width(),self.height()); super().resizeEvent(event)
+    def update_colors(self, grid_color, scanline_color):
+        self.grid_color = QColor(grid_color); self.scanline.update_color(scanline_color); self.update()
+
+# ========== 页面（无标题） ==========
+class BasePage(QWidget):
+    def __init__(self, bg_color):
+        super().__init__()
+        self.setStyleSheet(f"background-color: {bg_color};")
+        layout = QVBoxLayout()
+        layout.addStretch()
+        self.setLayout(layout)
+
+class FishingPage(BasePage):
+    def __init__(self, theme): super().__init__(theme["panel_bg"])
+class MissionPage(BasePage):
+    def __init__(self, theme): super().__init__(theme["panel_bg"])
+class CombatPage(BasePage):
+    def __init__(self, theme): super().__init__(theme["panel_bg"])
+class ExchangePage(BasePage):
+    def __init__(self, theme): super().__init__(theme["panel_bg"])
+class PinkClawPage(BasePage):
+    def __init__(self, theme): super().__init__(theme["panel_bg"])
+class DrivingPage(BasePage):
+    def __init__(self, theme): super().__init__(theme["panel_bg"])
+
+# ========== 主窗口 ==========
+class MainWindow(QMainWindow):
+    def __init__(self, config):
+        super().__init__()
+        self.config = config
+        self.current_theme_name = config.get("theme", "默认")
+        self.particles_enabled = config.get("particles_enabled", True)
+        self.setWindowTitle("MintNTE")
+        self.resize(config.get("window_width",1000), config.get("window_height",600))
+        self.init_ui()
+        self.init_particles()
+        self.mouse_tracker = GlobalMouseTracker(self.particle_overlay, self)
+        QApplication.instance().installEventFilter(self.mouse_tracker)
+        self.log_handler = QTextEditHandler()
+        # 暂不添加到根logger，避免自动输出到UI，等以后独立窗口时再连接
+        last_page = min(config.get("last_page",0), len(self.pages)-1)
+        self.switch_page(last_page)
+        logger.info("主窗口初始化完成")
+
+    def init_ui(self):
+        theme = THEMES[self.current_theme_name]
+        central = QWidget(); self.setCentralWidget(central)
+        main_layout = QVBoxLayout(central); main_layout.setContentsMargins(0,0,0,0); main_layout.setSpacing(0)
+
+        # 工具栏
+        self.toolbar = QWidget(); self.toolbar.setFixedHeight(40)
+        self.toolbar.setStyleSheet(f"background-color: {theme['toolbar_bg']}; color: #cccccc;")
+        tlay = QHBoxLayout(self.toolbar); tlay.setContentsMargins(10,5,10,5)
+        self.breadcrumb = QLabel("  当前: 钓鱼")
+        self.breadcrumb.setStyleSheet(f"color: {theme['breadcrumb_color']}; font-size:14px;")
+        tlay.addWidget(self.breadcrumb); tlay.addStretch()
+
+        def add_label(text):
+            lbl = QLabel(text); lbl.setStyleSheet("color: #cccccc;"); tlay.addWidget(lbl)
+        add_label("主题:")
+        self.theme_combo = QComboBox(); self.theme_combo.addItems(THEMES.keys())
+        self.theme_combo.setCurrentText(self.current_theme_name); self.theme_combo.currentTextChanged.connect(self.apply_theme)
+        tlay.addWidget(self.theme_combo)
+        add_label("粒子:")
+        self.particle_style_combo = QComboBox()
+        self.particle_style_combo.addItems(["星星","爱心","翅膀","钻石"])
+        self.particle_style_combo.currentTextChanged.connect(self.change_particle_style)
+        tlay.addWidget(self.particle_style_combo)
+        self.particle_checkbox = QCheckBox("鼠标特效"); self.particle_checkbox.setChecked(self.particles_enabled)
+        self.particle_checkbox.stateChanged.connect(self.toggle_particles)
+        self.particle_checkbox.setStyleSheet("color: #cccccc;")
+        tlay.addWidget(self.particle_checkbox)
+
+        # 运行日志复选框（目前不连接任何UI显示，预留给你以后扩展）
+        self.log_checkbox = QCheckBox("运行日志")
+        self.log_checkbox.setChecked(False)
+        # self.log_checkbox.stateChanged.connect(self.toggle_log_panel)  # 未来可启用
+        self.log_checkbox.setStyleSheet("color: #cccccc;")
+        tlay.addWidget(self.log_checkbox)
+
+        main_layout.addWidget(self.toolbar)
+
+        content = QWidget(); content_layout = QHBoxLayout(content)
+        content_layout.setContentsMargins(0,0,0,0); content_layout.setSpacing(0)
+
+        # 左侧导航
+        self.sidebar = QWidget(); self.sidebar.setFixedWidth(145)
+        self.sidebar.setStyleSheet(f"background-color: {theme['sidebar_bg']}; border-right:2px solid #2a2a4a;")
+        sidebar_layout = QVBoxLayout(self.sidebar); sidebar_layout.setAlignment(Qt.AlignTop)
+        sidebar_layout.setContentsMargins(10,20,10,20); sidebar_layout.setSpacing(12)
+        self.sidebar_scanline = ScanlineWidget(self.sidebar, theme["scanline_color"])
+        self.sidebar_scanline.setGeometry(0,0,self.sidebar.width(),self.sidebar.height())
+
+        self.stack = QStackedWidget()
+        self.pages = [FishingPage(theme), MissionPage(theme), CombatPage(theme),
+                      ExchangePage(theme), PinkClawPage(theme), DrivingPage(theme)]
+        for p in self.pages: self.stack.addWidget(p)
+
+        self.nav_btns = []
+        texts = ["钓鱼","自动任务","战斗","兑换","粉爪","驾驶"]
+        btn_colors = theme["btn_colors"]
+        for i, (text, color) in enumerate(zip(texts, btn_colors)):
+            btn = NeonSelectButton(text, color)
+            btn.clicked.connect(lambda _, idx=i: self.switch_page(idx))
+            sidebar_layout.addWidget(btn); self.nav_btns.append(btn)
+        for btn in self.nav_btns: btn.setChecked(False)
+        content_layout.addWidget(self.sidebar)
+
+        # 右侧大框（无日志面板）
+        self.right_panel = GridPanel(theme["grid_line_color"], theme["scanline_color"])
+        self.right_panel.setStyleSheet(f"background-color: {theme['panel_bg']};")
+        right_layout = QVBoxLayout(self.right_panel); right_layout.setContentsMargins(20,15,20,15)
+        right_layout.addWidget(self.stack, 1)
+        content_layout.addWidget(self.right_panel)
+        main_layout.addWidget(content, 1)
+
+    def init_particles(self):
+        self.particle_overlay = ParticleOverlay(self)
+        self.particle_overlay.setEnabled(self.particles_enabled)
+        self.particle_overlay.setGeometry(self.rect()); self.particle_overlay.raise_()
+        self.particle_overlay.start_particles()
+        if self.nav_btns:
+            self.particle_overlay.set_particle_color(self.nav_btns[0].neon_color)
+
+    def change_particle_style(self, text):
+        style_map = {"星星":"star","爱心":"heart","翅膀":"wing","钻石":"diamond"}
+        self.particle_overlay.set_particle_style(style_map[text])
+        logger.info(f"粒子样式切换为：{text}")
+
+    def toggle_particles(self, state):
+        enabled = (state == Qt.Checked); self.particles_enabled = enabled
+        self.config["particles_enabled"] = enabled; self.particle_overlay.set_enabled(enabled)
+        logger.info(f"鼠标特效 {'开启' if enabled else '关闭'}")
+
+    def switch_page(self, index):
+        for i, btn in enumerate(self.nav_btns): btn.setChecked(i == index)
+        names = ["钓鱼","任务","战斗","兑换","粉爪","驾驶"]
+        self.breadcrumb.setText(f" 当前: {names[index]}")
+        self.stack.setCurrentIndex(index); self.config["last_page"] = index
+        if index < len(self.nav_btns):
+            self.particle_overlay.set_particle_color(self.nav_btns[index].neon_color)
+        logger.info(f"切换到页面：{names[index]}")
+
+    def apply_theme(self, theme_name):
+        theme = THEMES[theme_name]; self.current_theme_name = theme_name; self.config["theme"] = theme_name
+        self.toolbar.setStyleSheet(f"background-color: {theme['toolbar_bg']}; color: #cccccc;")
+        self.breadcrumb.setStyleSheet(f"color: {theme['breadcrumb_color']}; font-size:14px;")
+        self.sidebar.setStyleSheet(f"background-color: {theme['sidebar_bg']}; border-right:2px solid #2a2a4a;")
+        self.sidebar_scanline.update_color(theme["scanline_color"])
+        self.right_panel.update_colors(theme["grid_line_color"], theme["scanline_color"])
+        self.right_panel.setStyleSheet(f"background-color: {theme['panel_bg']};")
+        for i, btn in enumerate(self.nav_btns): btn.set_neon_color(theme["btn_colors"][i%len(theme["btn_colors"])])
+        current_idx = self.stack.currentIndex()
+        self.stack.blockSignals(True)
+        while self.stack.count():
+            w = self.stack.widget(0); self.stack.removeWidget(w); w.deleteLater()
+        self.pages = [FishingPage(theme), MissionPage(theme), CombatPage(theme),
+                      ExchangePage(theme), PinkClawPage(theme), DrivingPage(theme)]
+        for p in self.pages: self.stack.addWidget(p)
+        self.stack.setCurrentIndex(current_idx); self.stack.blockSignals(False)
+        if current_idx < len(self.nav_btns):
+            self.particle_overlay.set_particle_color(self.nav_btns[current_idx].neon_color)
+        logger.info(f"主题切换为：{theme_name}")
+
+    def resizeEvent(self, event):
+        super().resizeEvent(event)
+        if hasattr(self,'particle_overlay'):
+            self.particle_overlay.setGeometry(self.rect()); self.particle_overlay.raise_()
+        if hasattr(self,'sidebar_scanline'):
+            self.sidebar_scanline.setGeometry(0,0,self.sidebar.width(),self.sidebar.height())
+        self.config["window_width"] = self.width(); self.config["window_height"] = self.height()
+
+    def closeEvent(self, event):
+        QApplication.instance().removeEventFilter(self.mouse_tracker)
+        logging.getLogger().removeHandler(self.log_handler)
+        save_config(self.config)
+        self.particle_overlay.stop_particles()
+        for btn in self.nav_btns: btn.stop_all_timers()
+        super().closeEvent(event); logger.info("程序退出")
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    cfg = load_config()
+    win = MainWindow(cfg)
+    win.show()
+    sys.exit(app.exec_())

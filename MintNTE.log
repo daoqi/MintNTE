@@ -1,0 +1,1583 @@
+2026-05-18 02:49:19,598 - MintNTE - INFO - ============================================================
+2026-05-18 02:49:19,599 - MintNTE - INFO - 📋 日志策略：本文件每天午夜自动切片，最多保留最近 7 天的日志，旧日志将自动删除。
+2026-05-18 02:49:19,599 - MintNTE - INFO - ============================================================
+2026-05-18 02:49:20,325 - MintNTE - INFO - 锁定窗口: 异环   (句柄: 1903656)
+2026-05-18 02:49:21,724 - MintNTE - INFO - 功能 macro 未设置快捷键，跳过注册
+2026-05-18 02:49:21,725 - MintNTE - INFO - 功能 fortissimo 未设置快捷键，跳过注册
+2026-05-18 02:49:21,725 - MintNTE - INFO - 功能 driving 未设置快捷键，跳过注册
+2026-05-18 02:49:21,740 - MintNTE - INFO - 主窗口初始化完成
+2026-05-18 02:49:22,204 - MintNTE - INFO - 程序启动完成
+2026-05-18 02:49:51,867 - MintNTE - INFO - 热键触发: fishing
+2026-05-18 02:49:51,868 - MintNTE - INFO - 钓鱼已开始
+2026-05-18 02:49:51,871 - MintNTE - INFO - 开始循环钓鱼
+2026-05-18 02:49:51,871 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:49:51,950 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:49:52,024 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:49:56,958 - MintNTE - INFO - 热键触发: fishing
+2026-05-18 02:49:56,992 - MintNTE - INFO - 启动跟随
+2026-05-18 02:49:57,001 - MintNTE - INFO - 等待结果...
+2026-05-18 02:49:57,083 - MintNTE - INFO - 未知状态，退出本次钓鱼
+2026-05-18 02:49:57,084 - MintNTE - INFO - 结束，共钓鱼 0 条 (A:0 B:0 S:0)
+2026-05-18 02:49:57,084 - MintNTE - INFO - 钓鱼已停止
+2026-05-18 02:50:01,264 - MintNTE - INFO - 热键触发: fishing
+2026-05-18 02:50:01,266 - MintNTE - INFO - 钓鱼已开始
+2026-05-18 02:50:01,267 - MintNTE - INFO - 开始循环钓鱼
+2026-05-18 02:50:01,267 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:50:04,275 - MintNTE - INFO - 监测中...
+2026-05-18 02:50:04,311 - MintNTE - INFO - 热键触发: fishing
+2026-05-18 02:50:04,366 - MintNTE - INFO - 启动跟随
+2026-05-18 02:50:04,366 - MintNTE - INFO - 跟随功能已关闭
+2026-05-18 02:50:04,366 - MintNTE - ERROR - 跟随启动失败，放弃本次钓鱼
+2026-05-18 02:50:04,367 - MintNTE - INFO - 结束，共钓鱼 0 条 (A:0 B:0 S:0)
+2026-05-18 02:50:04,367 - MintNTE - INFO - 钓鱼已停止
+2026-05-18 02:50:09,845 - MintNTE - INFO - 热键触发: fishing
+2026-05-18 02:50:09,846 - MintNTE - INFO - 钓鱼已开始
+2026-05-18 02:50:09,847 - MintNTE - INFO - 开始循环钓鱼
+2026-05-18 02:50:09,847 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:50:12,859 - MintNTE - INFO - 监测中...
+2026-05-18 02:50:14,864 - MintNTE - ERROR - 逻辑异常: capture_window_to_cv() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "D:\Github\MontNET\plugins\fishing\fishing_core.py", line 119, in fish_logic
+    reconnect_found, _ = find_image_in_window(
+  File "D:\Github\MontNET\plugins\fishing\fishing_core.py", line 59, in find_image_in_window
+    img = capture_window_to_cv(hwnd, region) if region else capture_window_to_cv(hwnd)
+TypeError: capture_window_to_cv() takes 1 positional argument but 2 were given
+
+2026-05-18 02:50:17,900 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:50:20,951 - MintNTE - INFO - 监测中...
+2026-05-18 02:50:22,934 - MintNTE - ERROR - 逻辑异常: capture_window_to_cv() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "D:\Github\MontNET\plugins\fishing\fishing_core.py", line 119, in fish_logic
+    reconnect_found, _ = find_image_in_window(
+  File "D:\Github\MontNET\plugins\fishing\fishing_core.py", line 59, in find_image_in_window
+    img = capture_window_to_cv(hwnd, region) if region else capture_window_to_cv(hwnd)
+TypeError: capture_window_to_cv() takes 1 positional argument but 2 were given
+
+2026-05-18 02:50:25,960 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:50:29,014 - MintNTE - INFO - 监测中...
+2026-05-18 02:50:30,983 - MintNTE - ERROR - 逻辑异常: capture_window_to_cv() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "D:\Github\MontNET\plugins\fishing\fishing_core.py", line 119, in fish_logic
+    reconnect_found, _ = find_image_in_window(
+  File "D:\Github\MontNET\plugins\fishing\fishing_core.py", line 59, in find_image_in_window
+    img = capture_window_to_cv(hwnd, region) if region else capture_window_to_cv(hwnd)
+TypeError: capture_window_to_cv() takes 1 positional argument but 2 were given
+
+2026-05-18 02:50:34,148 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:50:37,162 - MintNTE - INFO - 监测中...
+2026-05-18 02:50:37,329 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:50:42,514 - MintNTE - INFO - ============================================================
+2026-05-18 02:50:42,515 - MintNTE - INFO - 📋 日志策略：本文件每天午夜自动切片，最多保留最近 7 天的日志，旧日志将自动删除。
+2026-05-18 02:50:42,515 - MintNTE - INFO - ============================================================
+2026-05-18 02:50:43,038 - MintNTE - INFO - 锁定窗口: 异环   (句柄: 1903656)
+2026-05-18 02:50:44,102 - MintNTE - INFO - 功能 macro 未设置快捷键，跳过注册
+2026-05-18 02:50:44,103 - MintNTE - INFO - 功能 fortissimo 未设置快捷键，跳过注册
+2026-05-18 02:50:44,103 - MintNTE - INFO - 功能 driving 未设置快捷键，跳过注册
+2026-05-18 02:50:44,116 - MintNTE - INFO - 主窗口初始化完成
+2026-05-18 02:50:44,282 - MintNTE - INFO - 程序启动完成
+2026-05-18 02:50:55,261 - MintNTE - INFO - 钓鱼已开始
+2026-05-18 02:50:55,261 - MintNTE - INFO - 开始循环钓鱼
+2026-05-18 02:50:55,261 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:50:55,318 - MintNTE - INFO - 按 F 进入钓鱼 (后台按键)
+2026-05-18 02:50:56,178 - MintNTE - INFO - 开始钓鱼 (前台点击)
+2026-05-18 02:50:57,471 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:50:57,531 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:51:02,628 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:51:02,628 - MintNTE - INFO - 启动跟随
+2026-05-18 02:51:02,633 - MintNTE - INFO - 等待结果...
+2026-05-18 02:51:02,715 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.333
+2026-05-18 02:51:02,716 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.239
+2026-05-18 02:51:02,920 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.340
+2026-05-18 02:51:02,922 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.137
+2026-05-18 02:51:03,136 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.355
+2026-05-18 02:51:03,137 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.117
+2026-05-18 02:51:03,351 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.358
+2026-05-18 02:51:03,352 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.132
+2026-05-18 02:51:03,570 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.342
+2026-05-18 02:51:03,573 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.132
+2026-05-18 02:51:03,792 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.260
+2026-05-18 02:51:03,796 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.147
+2026-05-18 02:51:04,009 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.323
+2026-05-18 02:51:04,012 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.146
+2026-05-18 02:51:04,243 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.382
+2026-05-18 02:51:04,244 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.172
+2026-05-18 02:51:04,476 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.416
+2026-05-18 02:51:04,478 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.170
+2026-05-18 02:51:04,705 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.428
+2026-05-18 02:51:04,706 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.131
+2026-05-18 02:51:04,919 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.440
+2026-05-18 02:51:04,921 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.153
+2026-05-18 02:51:05,145 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.445
+2026-05-18 02:51:05,146 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.137
+2026-05-18 02:51:05,373 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.455
+2026-05-18 02:51:05,374 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.120
+2026-05-18 02:51:05,594 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.443
+2026-05-18 02:51:05,596 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.122
+2026-05-18 02:51:05,818 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.445
+2026-05-18 02:51:05,819 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.106
+2026-05-18 02:51:06,046 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.442
+2026-05-18 02:51:06,049 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.122
+2026-05-18 02:51:06,277 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.454
+2026-05-18 02:51:06,278 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.194
+2026-05-18 02:51:06,488 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.457
+2026-05-18 02:51:06,488 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.123
+2026-05-18 02:51:06,712 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.454
+2026-05-18 02:51:06,718 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.151
+2026-05-18 02:51:06,961 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.447
+2026-05-18 02:51:06,962 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.154
+2026-05-18 02:51:07,190 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.437
+2026-05-18 02:51:07,191 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.134
+2026-05-18 02:51:07,408 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.450
+2026-05-18 02:51:07,789 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.249
+2026-05-18 02:51:07,789 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.255
+2026-05-18 02:51:08,011 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.264
+2026-05-18 02:51:08,011 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.413
+2026-05-18 02:51:08,230 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.295
+2026-05-18 02:51:08,231 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.251
+2026-05-18 02:51:08,449 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.320
+2026-05-18 02:51:08,450 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.218
+2026-05-18 02:51:08,680 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.320
+2026-05-18 02:51:08,682 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.256
+2026-05-18 02:51:08,893 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.273
+2026-05-18 02:51:08,894 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.234
+2026-05-18 02:51:09,108 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.258
+2026-05-18 02:51:09,109 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.284
+2026-05-18 02:51:09,324 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.303
+2026-05-18 02:51:09,326 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.277
+2026-05-18 02:51:09,536 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.547
+2026-05-18 02:51:09,537 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.200
+2026-05-18 02:51:09,791 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.035
+2026-05-18 02:51:09,792 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.581
+2026-05-18 02:51:09,793 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.444
+2026-05-18 02:51:09,794 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.970
+2026-05-18 02:51:09,795 - MintNTE - INFO - 钓起B级鱼
+2026-05-18 02:51:09,795 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:51:11,365 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:51:11,429 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:51:11,491 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:51:16,297 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:51:16,297 - MintNTE - INFO - 启动跟随
+2026-05-18 02:51:16,300 - MintNTE - INFO - 等待结果...
+2026-05-18 02:51:16,373 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.307
+2026-05-18 02:51:16,374 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.146
+2026-05-18 02:51:16,584 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.344
+2026-05-18 02:51:16,585 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.195
+2026-05-18 02:51:16,808 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.357
+2026-05-18 02:51:16,809 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.170
+2026-05-18 02:51:17,016 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.346
+2026-05-18 02:51:17,017 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.134
+2026-05-18 02:51:17,246 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.340
+2026-05-18 02:51:17,249 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.133
+2026-05-18 02:51:17,468 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.324
+2026-05-18 02:51:17,470 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.133
+2026-05-18 02:51:17,701 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.333
+2026-05-18 02:51:17,704 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.151
+2026-05-18 02:51:17,924 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.323
+2026-05-18 02:51:17,925 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.132
+2026-05-18 02:51:18,152 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.341
+2026-05-18 02:51:18,154 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.149
+2026-05-18 02:51:18,366 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.342
+2026-05-18 02:51:18,367 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.121
+2026-05-18 02:51:18,595 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.355
+2026-05-18 02:51:18,597 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.117
+2026-05-18 02:51:18,827 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.346
+2026-05-18 02:51:18,828 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.114
+2026-05-18 02:51:19,042 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.346
+2026-05-18 02:51:19,052 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.120
+2026-05-18 02:51:19,274 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.331
+2026-05-18 02:51:19,275 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.165
+2026-05-18 02:51:19,488 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.330
+2026-05-18 02:51:19,489 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.167
+2026-05-18 02:51:19,706 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.335
+2026-05-18 02:51:19,707 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.129
+2026-05-18 02:51:19,923 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.334
+2026-05-18 02:51:19,924 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.132
+2026-05-18 02:51:20,150 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.336
+2026-05-18 02:51:20,151 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.138
+2026-05-18 02:51:20,390 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.352
+2026-05-18 02:51:20,393 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.120
+2026-05-18 02:51:20,626 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.328
+2026-05-18 02:51:20,630 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.120
+2026-05-18 02:51:20,861 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.331
+2026-05-18 02:51:20,862 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.149
+2026-05-18 02:51:21,076 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.332
+2026-05-18 02:51:21,077 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.131
+2026-05-18 02:51:21,296 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.329
+2026-05-18 02:51:21,297 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.098
+2026-05-18 02:51:21,513 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.327
+2026-05-18 02:51:21,514 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.100
+2026-05-18 02:51:21,728 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.327
+2026-05-18 02:51:21,729 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.135
+2026-05-18 02:51:21,954 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.336
+2026-05-18 02:51:21,955 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.067
+2026-05-18 02:51:22,188 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.319
+2026-05-18 02:51:22,191 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.253
+2026-05-18 02:51:22,410 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.306
+2026-05-18 02:51:22,411 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.259
+2026-05-18 02:51:22,617 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.312
+2026-05-18 02:51:22,618 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.269
+2026-05-18 02:51:22,843 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.249
+2026-05-18 02:51:22,844 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.246
+2026-05-18 02:51:23,081 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.226
+2026-05-18 02:51:23,081 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.262
+2026-05-18 02:51:23,280 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.276
+2026-05-18 02:51:23,281 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.269
+2026-05-18 02:51:23,480 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.304
+2026-05-18 02:51:23,480 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.313
+2026-05-18 02:51:23,680 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.256
+2026-05-18 02:51:23,681 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.286
+2026-05-18 02:51:23,882 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.286
+2026-05-18 02:51:23,883 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.323
+2026-05-18 02:51:24,080 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.262
+2026-05-18 02:51:24,080 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.299
+2026-05-18 02:51:24,297 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.617
+2026-05-18 02:51:24,298 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.231
+2026-05-18 02:51:24,555 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.007
+2026-05-18 02:51:24,556 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.516
+2026-05-18 02:51:24,556 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.998
+2026-05-18 02:51:24,557 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.558
+2026-05-18 02:51:24,557 - MintNTE - INFO - 钓起A级鱼
+2026-05-18 02:51:24,557 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:51:26,118 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:51:26,175 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:51:26,224 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:51:31,296 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:51:31,298 - MintNTE - INFO - 启动跟随
+2026-05-18 02:51:31,316 - MintNTE - INFO - 等待结果...
+2026-05-18 02:51:31,400 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.336
+2026-05-18 02:51:31,401 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.140
+2026-05-18 02:51:31,660 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.342
+2026-05-18 02:51:31,662 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.127
+2026-05-18 02:51:31,880 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.348
+2026-05-18 02:51:31,881 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.137
+2026-05-18 02:51:32,116 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.354
+2026-05-18 02:51:32,118 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.126
+2026-05-18 02:51:32,345 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.346
+2026-05-18 02:51:32,346 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.127
+2026-05-18 02:51:32,584 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.255
+2026-05-18 02:51:32,587 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.124
+2026-05-18 02:51:32,824 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.256
+2026-05-18 02:51:32,826 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.139
+2026-05-18 02:51:33,060 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.260
+2026-05-18 02:51:33,063 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.172
+2026-05-18 02:51:33,313 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.253
+2026-05-18 02:51:33,314 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.127
+2026-05-18 02:51:33,561 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.307
+2026-05-18 02:51:33,563 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.138
+2026-05-18 02:51:33,792 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.301
+2026-05-18 02:51:33,794 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.121
+2026-05-18 02:51:34,025 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.257
+2026-05-18 02:51:34,026 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.129
+2026-05-18 02:51:34,262 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.253
+2026-05-18 02:51:34,263 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.140
+2026-05-18 02:51:34,479 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.249
+2026-05-18 02:51:34,481 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.092
+2026-05-18 02:51:34,706 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.230
+2026-05-18 02:51:34,707 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.101
+2026-05-18 02:51:34,936 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.253
+2026-05-18 02:51:34,938 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.104
+2026-05-18 02:51:35,174 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.253
+2026-05-18 02:51:35,175 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.086
+2026-05-18 02:51:35,399 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.243
+2026-05-18 02:51:35,401 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.127
+2026-05-18 02:51:35,623 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.259
+2026-05-18 02:51:35,624 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.119
+2026-05-18 02:51:35,859 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.338
+2026-05-18 02:51:35,860 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.132
+2026-05-18 02:51:36,131 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.351
+2026-05-18 02:51:36,132 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.250
+2026-05-18 02:51:36,389 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.283
+2026-05-18 02:51:36,391 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.263
+2026-05-18 02:51:36,640 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.305
+2026-05-18 02:51:36,643 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.242
+2026-05-18 02:51:36,897 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.297
+2026-05-18 02:51:36,898 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.314
+2026-05-18 02:51:37,169 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.246
+2026-05-18 02:51:37,172 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.229
+2026-05-18 02:51:37,448 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.346
+2026-05-18 02:51:37,449 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.333
+2026-05-18 02:51:37,727 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.311
+2026-05-18 02:51:37,735 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.349
+2026-05-18 02:51:37,974 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.362
+2026-05-18 02:51:37,976 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.246
+2026-05-18 02:51:38,208 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.553
+2026-05-18 02:51:38,210 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.291
+2026-05-18 02:51:38,489 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.050
+2026-05-18 02:51:38,490 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.580
+2026-05-18 02:51:38,491 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.444
+2026-05-18 02:51:38,493 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.968
+2026-05-18 02:51:38,493 - MintNTE - INFO - 钓起B级鱼
+2026-05-18 02:51:38,493 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:51:40,059 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:51:40,116 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:51:40,164 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:51:44,817 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:51:44,817 - MintNTE - INFO - 启动跟随
+2026-05-18 02:51:44,826 - MintNTE - INFO - 等待结果...
+2026-05-18 02:51:44,922 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.344
+2026-05-18 02:51:44,923 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.151
+2026-05-18 02:51:45,158 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.323
+2026-05-18 02:51:45,159 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.169
+2026-05-18 02:51:45,402 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.319
+2026-05-18 02:51:45,405 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.200
+2026-05-18 02:51:45,632 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.329
+2026-05-18 02:51:45,633 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.134
+2026-05-18 02:51:45,880 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.334
+2026-05-18 02:51:45,883 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.155
+2026-05-18 02:51:46,139 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.322
+2026-05-18 02:51:46,140 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.130
+2026-05-18 02:51:46,393 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.323
+2026-05-18 02:51:46,395 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.163
+2026-05-18 02:51:46,642 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.345
+2026-05-18 02:51:46,644 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.221
+2026-05-18 02:51:46,857 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.353
+2026-05-18 02:51:46,858 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.223
+2026-05-18 02:51:47,134 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.345
+2026-05-18 02:51:47,137 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.239
+2026-05-18 02:51:47,429 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.333
+2026-05-18 02:51:47,430 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.240
+2026-05-18 02:51:47,688 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.321
+2026-05-18 02:51:47,691 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.232
+2026-05-18 02:51:47,954 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.326
+2026-05-18 02:51:47,955 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.243
+2026-05-18 02:51:48,222 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.325
+2026-05-18 02:51:48,223 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.235
+2026-05-18 02:51:48,440 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.331
+2026-05-18 02:51:48,441 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.195
+2026-05-18 02:51:48,710 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.344
+2026-05-18 02:51:48,711 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.165
+2026-05-18 02:51:48,962 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.340
+2026-05-18 02:51:48,962 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.140
+2026-05-18 02:51:49,203 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.330
+2026-05-18 02:51:49,204 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.119
+2026-05-18 02:51:49,461 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.322
+2026-05-18 02:51:49,462 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.099
+2026-05-18 02:51:49,715 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.319
+2026-05-18 02:51:49,716 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.127
+2026-05-18 02:51:49,975 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.322
+2026-05-18 02:51:49,982 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.138
+2026-05-18 02:51:50,221 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.331
+2026-05-18 02:51:50,222 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.235
+2026-05-18 02:51:50,447 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.330
+2026-05-18 02:51:50,447 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.238
+2026-05-18 02:51:50,688 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.325
+2026-05-18 02:51:50,690 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.234
+2026-05-18 02:51:50,928 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.331
+2026-05-18 02:51:51,301 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.287
+2026-05-18 02:51:51,303 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.309
+2026-05-18 02:51:51,533 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.319
+2026-05-18 02:51:51,535 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.259
+2026-05-18 02:51:51,774 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.209
+2026-05-18 02:51:51,775 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.201
+2026-05-18 02:51:52,031 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.212
+2026-05-18 02:51:52,032 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.246
+2026-05-18 02:51:52,264 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.291
+2026-05-18 02:51:52,265 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.252
+2026-05-18 02:51:52,480 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.233
+2026-05-18 02:51:52,481 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.277
+2026-05-18 02:51:52,696 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.238
+2026-05-18 02:51:52,698 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.256
+2026-05-18 02:51:52,954 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.327
+2026-05-18 02:51:52,955 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.233
+2026-05-18 02:51:53,277 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.007
+2026-05-18 02:51:53,278 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.580
+2026-05-18 02:51:53,279 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.444
+2026-05-18 02:51:53,280 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.976
+2026-05-18 02:51:53,280 - MintNTE - INFO - 钓起B级鱼
+2026-05-18 02:51:53,280 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:51:54,850 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:51:54,933 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:51:54,997 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:51:59,866 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:51:59,866 - MintNTE - INFO - 启动跟随
+2026-05-18 02:51:59,871 - MintNTE - INFO - 等待结果...
+2026-05-18 02:51:59,952 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.321
+2026-05-18 02:51:59,955 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.182
+2026-05-18 02:52:00,177 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.344
+2026-05-18 02:52:00,178 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.182
+2026-05-18 02:52:00,390 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.358
+2026-05-18 02:52:00,391 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.217
+2026-05-18 02:52:00,601 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.357
+2026-05-18 02:52:00,601 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.149
+2026-05-18 02:52:00,828 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.271
+2026-05-18 02:52:00,829 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.137
+2026-05-18 02:52:01,050 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.259
+2026-05-18 02:52:01,052 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.147
+2026-05-18 02:52:01,286 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.246
+2026-05-18 02:52:01,288 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.114
+2026-05-18 02:52:01,502 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.244
+2026-05-18 02:52:01,503 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.129
+2026-05-18 02:52:01,725 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.439
+2026-05-18 02:52:01,726 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.133
+2026-05-18 02:52:01,947 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.437
+2026-05-18 02:52:01,949 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.114
+2026-05-18 02:52:02,167 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.447
+2026-05-18 02:52:02,168 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.139
+2026-05-18 02:52:02,396 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.451
+2026-05-18 02:52:02,398 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.137
+2026-05-18 02:52:02,615 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.451
+2026-05-18 02:52:02,615 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.098
+2026-05-18 02:52:02,818 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.447
+2026-05-18 02:52:02,820 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.098
+2026-05-18 02:52:03,056 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.458
+2026-05-18 02:52:03,059 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.043
+2026-05-18 02:52:03,274 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.455
+2026-05-18 02:52:03,275 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.096
+2026-05-18 02:52:03,482 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.423
+2026-05-18 02:52:03,483 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.129
+2026-05-18 02:52:03,683 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.441
+2026-05-18 02:52:03,684 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.120
+2026-05-18 02:52:03,898 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.424
+2026-05-18 02:52:03,899 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.133
+2026-05-18 02:52:04,107 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.410
+2026-05-18 02:52:04,108 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.147
+2026-05-18 02:52:04,339 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.402
+2026-05-18 02:52:04,342 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.144
+2026-05-18 02:52:04,550 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.418
+2026-05-18 02:52:04,551 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.150
+2026-05-18 02:52:04,777 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.239
+2026-05-18 02:52:04,781 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.264
+2026-05-18 02:52:04,994 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.234
+2026-05-18 02:52:04,998 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.243
+2026-05-18 02:52:05,213 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.288
+2026-05-18 02:52:05,214 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.247
+2026-05-18 02:52:05,434 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.260
+2026-05-18 02:52:05,435 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.265
+2026-05-18 02:52:05,656 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.229
+2026-05-18 02:52:05,657 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.267
+2026-05-18 02:52:05,887 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.233
+2026-05-18 02:52:05,888 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.349
+2026-05-18 02:52:06,115 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.325
+2026-05-18 02:52:06,116 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.326
+2026-05-18 02:52:06,314 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.248
+2026-05-18 02:52:06,314 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.238
+2026-05-18 02:52:06,523 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.366
+2026-05-18 02:52:06,524 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.250
+2026-05-18 02:52:06,760 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.071
+2026-05-18 02:52:06,760 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.582
+2026-05-18 02:52:06,760 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.447
+2026-05-18 02:52:06,761 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.982
+2026-05-18 02:52:06,761 - MintNTE - INFO - 钓起B级鱼
+2026-05-18 02:52:06,762 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:52:08,331 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:52:08,375 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:52:08,422 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:52:13,543 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:52:13,543 - MintNTE - INFO - 启动跟随
+2026-05-18 02:52:13,548 - MintNTE - INFO - 等待结果...
+2026-05-18 02:52:13,640 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.337
+2026-05-18 02:52:13,642 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.113
+2026-05-18 02:52:13,853 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.335
+2026-05-18 02:52:13,854 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.164
+2026-05-18 02:52:14,076 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.334
+2026-05-18 02:52:14,077 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.114
+2026-05-18 02:52:14,287 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.330
+2026-05-18 02:52:14,288 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.154
+2026-05-18 02:52:14,506 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.324
+2026-05-18 02:52:14,507 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.136
+2026-05-18 02:52:14,735 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.331
+2026-05-18 02:52:14,736 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.152
+2026-05-18 02:52:14,952 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.326
+2026-05-18 02:52:14,954 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.145
+2026-05-18 02:52:15,177 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.331
+2026-05-18 02:52:15,179 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.129
+2026-05-18 02:52:15,403 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.333
+2026-05-18 02:52:15,404 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.130
+2026-05-18 02:52:15,622 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.330
+2026-05-18 02:52:15,623 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.148
+2026-05-18 02:52:15,859 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.329
+2026-05-18 02:52:15,860 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.236
+2026-05-18 02:52:16,076 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.328
+2026-05-18 02:52:16,078 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.231
+2026-05-18 02:52:16,285 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.331
+2026-05-18 02:52:16,286 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.236
+2026-05-18 02:52:16,500 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.333
+2026-05-18 02:52:16,501 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.240
+2026-05-18 02:52:16,727 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.314
+2026-05-18 02:52:16,728 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.236
+2026-05-18 02:52:16,929 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.318
+2026-05-18 02:52:16,931 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.236
+2026-05-18 02:52:17,156 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.308
+2026-05-18 02:52:17,157 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.234
+2026-05-18 02:52:17,389 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.312
+2026-05-18 02:52:17,390 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.236
+2026-05-18 02:52:17,593 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.315
+2026-05-18 02:52:17,594 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.238
+2026-05-18 02:52:17,802 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.325
+2026-05-18 02:52:17,803 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.238
+2026-05-18 02:52:18,022 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.321
+2026-05-18 02:52:18,022 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.237
+2026-05-18 02:52:18,235 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.337
+2026-05-18 02:52:18,237 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.249
+2026-05-18 02:52:18,458 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.349
+2026-05-18 02:52:18,460 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.241
+2026-05-18 02:52:18,670 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.353
+2026-05-18 02:52:18,672 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.230
+2026-05-18 02:52:18,897 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.334
+2026-05-18 02:52:18,898 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.221
+2026-05-18 02:52:19,121 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.327
+2026-05-18 02:52:19,128 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.226
+2026-05-18 02:52:19,355 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.332
+2026-05-18 02:52:19,361 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.235
+2026-05-18 02:52:19,584 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.321
+2026-05-18 02:52:19,947 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.267
+2026-05-18 02:52:19,948 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.233
+2026-05-18 02:52:20,158 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.323
+2026-05-18 02:52:20,159 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.243
+2026-05-18 02:52:20,371 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.257
+2026-05-18 02:52:20,373 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.304
+2026-05-18 02:52:20,589 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.243
+2026-05-18 02:52:20,590 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.286
+2026-05-18 02:52:20,816 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.278
+2026-05-18 02:52:20,817 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.304
+2026-05-18 02:52:21,039 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.322
+2026-05-18 02:52:21,041 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.254
+2026-05-18 02:52:21,262 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.253
+2026-05-18 02:52:21,264 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.314
+2026-05-18 02:52:21,480 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.311
+2026-05-18 02:52:21,484 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.281
+2026-05-18 02:52:21,715 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.456
+2026-05-18 02:52:21,716 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.231
+2026-05-18 02:52:22,047 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.007
+2026-05-18 02:52:22,048 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.511
+2026-05-18 02:52:22,048 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=1.000
+2026-05-18 02:52:22,049 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.554
+2026-05-18 02:52:22,049 - MintNTE - INFO - 钓起A级鱼
+2026-05-18 02:52:22,049 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:52:23,622 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:52:23,677 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:52:23,723 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:52:26,261 - MintNTE - INFO - 功能 macro 未设置快捷键，跳过注册
+2026-05-18 02:52:26,261 - MintNTE - INFO - 功能 fortissimo 未设置快捷键，跳过注册
+2026-05-18 02:52:26,262 - MintNTE - INFO - 功能 driving 未设置快捷键，跳过注册
+2026-05-18 02:52:29,641 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:52:29,641 - MintNTE - INFO - 启动跟随
+2026-05-18 02:52:29,645 - MintNTE - INFO - 等待结果...
+2026-05-18 02:52:29,713 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.332
+2026-05-18 02:52:29,714 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.093
+2026-05-18 02:52:29,936 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.345
+2026-05-18 02:52:29,937 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.005
+2026-05-18 02:52:30,159 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.351
+2026-05-18 02:52:30,160 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:30,391 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.365
+2026-05-18 02:52:30,393 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:30,623 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.355
+2026-05-18 02:52:30,624 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.094
+2026-05-18 02:52:30,848 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.346
+2026-05-18 02:52:30,850 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.081
+2026-05-18 02:52:31,076 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.361
+2026-05-18 02:52:31,077 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:31,311 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.344
+2026-05-18 02:52:31,312 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.053
+2026-05-18 02:52:31,538 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.335
+2026-05-18 02:52:31,539 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:31,758 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.352
+2026-05-18 02:52:31,761 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:31,992 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.361
+2026-05-18 02:52:31,993 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:32,224 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.351
+2026-05-18 02:52:32,226 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.111
+2026-05-18 02:52:32,443 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.342
+2026-05-18 02:52:32,455 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:32,683 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.344
+2026-05-18 02:52:32,684 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.178
+2026-05-18 02:52:32,924 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.346
+2026-05-18 02:52:32,925 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.154
+2026-05-18 02:52:33,137 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.331
+2026-05-18 02:52:33,138 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.094
+2026-05-18 02:52:33,353 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.339
+2026-05-18 02:52:33,356 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.118
+2026-05-18 02:52:33,564 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.351
+2026-05-18 02:52:33,564 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.118
+2026-05-18 02:52:33,798 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.355
+2026-05-18 02:52:33,799 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.124
+2026-05-18 02:52:34,026 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.364
+2026-05-18 02:52:34,030 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.127
+2026-05-18 02:52:34,256 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.186
+2026-05-18 02:52:34,264 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.136
+2026-05-18 02:52:34,478 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.266
+2026-05-18 02:52:34,479 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:34,723 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.406
+2026-05-18 02:52:34,724 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:34,952 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.293
+2026-05-18 02:52:34,953 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:35,179 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.287
+2026-05-18 02:52:35,181 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.254
+2026-05-18 02:52:35,403 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.512
+2026-05-18 02:52:35,768 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.270
+2026-05-18 02:52:35,768 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.321
+2026-05-18 02:52:35,988 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.255
+2026-05-18 02:52:35,989 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.390
+2026-05-18 02:52:36,201 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.228
+2026-05-18 02:52:36,202 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.391
+2026-05-18 02:52:36,408 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.238
+2026-05-18 02:52:36,408 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.329
+2026-05-18 02:52:36,635 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.231
+2026-05-18 02:52:36,638 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.338
+2026-05-18 02:52:36,869 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.271
+2026-05-18 02:52:36,869 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.264
+2026-05-18 02:52:37,089 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.251
+2026-05-18 02:52:37,090 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.376
+2026-05-18 02:52:37,316 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.292
+2026-05-18 02:52:37,317 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.316
+2026-05-18 02:52:37,518 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.508
+2026-05-18 02:52:37,519 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.316
+2026-05-18 02:52:37,777 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.007
+2026-05-18 02:52:37,778 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.510
+2026-05-18 02:52:37,779 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=1.000
+2026-05-18 02:52:37,779 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.554
+2026-05-18 02:52:37,779 - MintNTE - INFO - 钓起A级鱼
+2026-05-18 02:52:37,779 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:52:39,350 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:52:39,431 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:52:39,483 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:52:44,315 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:52:44,315 - MintNTE - INFO - 启动跟随
+2026-05-18 02:52:44,318 - MintNTE - INFO - 等待结果...
+2026-05-18 02:52:44,408 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.327
+2026-05-18 02:52:44,409 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.075
+2026-05-18 02:52:44,620 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.355
+2026-05-18 02:52:44,621 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.027
+2026-05-18 02:52:44,834 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.363
+2026-05-18 02:52:44,835 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.060
+2026-05-18 02:52:45,059 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.347
+2026-05-18 02:52:45,061 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:45,292 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.350
+2026-05-18 02:52:45,293 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:45,503 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.361
+2026-05-18 02:52:45,504 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.120
+2026-05-18 02:52:45,719 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.367
+2026-05-18 02:52:45,720 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.110
+2026-05-18 02:52:45,944 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.361
+2026-05-18 02:52:45,946 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.133
+2026-05-18 02:52:46,172 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.376
+2026-05-18 02:52:46,173 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:46,396 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.370
+2026-05-18 02:52:46,398 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.090
+2026-05-18 02:52:46,624 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.369
+2026-05-18 02:52:46,625 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.179
+2026-05-18 02:52:46,864 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.363
+2026-05-18 02:52:46,865 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.165
+2026-05-18 02:52:47,099 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.364
+2026-05-18 02:52:47,100 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:47,353 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.356
+2026-05-18 02:52:47,355 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.059
+2026-05-18 02:52:47,582 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.357
+2026-05-18 02:52:47,584 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:47,832 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.349
+2026-05-18 02:52:47,833 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:48,074 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.368
+2026-05-18 02:52:48,075 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:48,314 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.359
+2026-05-18 02:52:48,315 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.129
+2026-05-18 02:52:48,534 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.339
+2026-05-18 02:52:48,534 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.067
+2026-05-18 02:52:48,751 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.348
+2026-05-18 02:52:48,752 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:48,967 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.348
+2026-05-18 02:52:48,968 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:49,189 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.217
+2026-05-18 02:52:49,190 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:49,417 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.279
+2026-05-18 02:52:49,418 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:49,640 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.293
+2026-05-18 02:52:49,641 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:49,858 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.318
+2026-05-18 02:52:49,862 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:52:50,064 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.280
+2026-05-18 02:52:50,435 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.253
+2026-05-18 02:52:50,437 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.349
+2026-05-18 02:52:50,650 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.231
+2026-05-18 02:52:50,651 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.375
+2026-05-18 02:52:50,869 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.226
+2026-05-18 02:52:50,871 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.409
+2026-05-18 02:52:51,234 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.269
+2026-05-18 02:52:51,235 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.319
+2026-05-18 02:52:51,450 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.263
+2026-05-18 02:52:51,455 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.296
+2026-05-18 02:52:51,674 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.219
+2026-05-18 02:52:51,675 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.231
+2026-05-18 02:52:51,895 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.224
+2026-05-18 02:52:51,896 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.243
+2026-05-18 02:52:52,115 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.227
+2026-05-18 02:52:52,115 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.234
+2026-05-18 02:52:52,374 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.109
+2026-05-18 02:52:52,374 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.581
+2026-05-18 02:52:52,375 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.445
+2026-05-18 02:52:52,376 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.980
+2026-05-18 02:52:52,376 - MintNTE - INFO - 钓起B级鱼
+2026-05-18 02:52:52,376 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:52:53,946 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:52:53,996 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:52:54,045 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:53:00,795 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:53:00,795 - MintNTE - INFO - 启动跟随
+2026-05-18 02:53:00,798 - MintNTE - INFO - 等待结果...
+2026-05-18 02:53:00,868 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.226
+2026-05-18 02:53:00,870 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.135
+2026-05-18 02:53:01,085 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.341
+2026-05-18 02:53:01,085 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.070
+2026-05-18 02:53:01,303 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.344
+2026-05-18 02:53:01,304 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.034
+2026-05-18 02:53:01,534 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.339
+2026-05-18 02:53:01,534 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.070
+2026-05-18 02:53:01,764 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.351
+2026-05-18 02:53:01,766 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.042
+2026-05-18 02:53:01,988 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.237
+2026-05-18 02:53:01,989 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.120
+2026-05-18 02:53:02,217 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.236
+2026-05-18 02:53:02,217 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.119
+2026-05-18 02:53:02,438 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.304
+2026-05-18 02:53:02,439 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:02,677 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.293
+2026-05-18 02:53:02,678 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:02,906 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.311
+2026-05-18 02:53:02,907 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:03,123 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.261
+2026-05-18 02:53:03,124 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:03,337 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.357
+2026-05-18 02:53:03,338 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.109
+2026-05-18 02:53:03,561 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.409
+2026-05-18 02:53:03,563 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:03,790 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.370
+2026-05-18 02:53:03,791 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:04,009 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.471
+2026-05-18 02:53:04,010 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.043
+2026-05-18 02:53:04,234 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.339
+2026-05-18 02:53:04,235 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.072
+2026-05-18 02:53:04,450 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.326
+2026-05-18 02:53:04,451 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.069
+2026-05-18 02:53:04,666 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.320
+2026-05-18 02:53:04,667 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:04,898 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.324
+2026-05-18 02:53:04,899 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.110
+2026-05-18 02:53:05,130 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.332
+2026-05-18 02:53:05,131 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.210
+2026-05-18 02:53:05,339 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.327
+2026-05-18 02:53:05,340 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.171
+2026-05-18 02:53:05,564 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.313
+2026-05-18 02:53:05,565 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.212
+2026-05-18 02:53:05,772 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.316
+2026-05-18 02:53:05,773 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.211
+2026-05-18 02:53:06,000 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.335
+2026-05-18 02:53:06,001 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.214
+2026-05-18 02:53:06,220 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.331
+2026-05-18 02:53:06,221 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.177
+2026-05-18 02:53:06,435 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.344
+2026-05-18 02:53:06,436 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.074
+2026-05-18 02:53:06,666 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.344
+2026-05-18 02:53:06,667 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.050
+2026-05-18 02:53:06,866 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.340
+2026-05-18 02:53:07,214 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.279
+2026-05-18 02:53:07,215 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.317
+2026-05-18 02:53:07,415 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.283
+2026-05-18 02:53:07,416 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.371
+2026-05-18 02:53:07,617 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.308
+2026-05-18 02:53:07,618 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.387
+2026-05-18 02:53:07,836 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.295
+2026-05-18 02:53:07,838 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.320
+2026-05-18 02:53:08,054 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.285
+2026-05-18 02:53:08,054 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.315
+2026-05-18 02:53:08,281 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.244
+2026-05-18 02:53:08,283 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.238
+2026-05-18 02:53:08,501 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.291
+2026-05-18 02:53:08,505 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.302
+2026-05-18 02:53:08,732 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.238
+2026-05-18 02:53:08,733 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.258
+2026-05-18 02:53:08,950 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.413
+2026-05-18 02:53:08,950 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.314
+2026-05-18 02:53:09,218 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=-0.107
+2026-05-18 02:53:09,218 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.509
+2026-05-18 02:53:09,218 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.999
+2026-05-18 02:53:09,219 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.552
+2026-05-18 02:53:09,219 - MintNTE - INFO - 钓起A级鱼
+2026-05-18 02:53:09,219 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:53:10,785 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:53:10,846 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:53:10,908 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:53:15,891 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:53:15,892 - MintNTE - INFO - 启动跟随
+2026-05-18 02:53:15,894 - MintNTE - INFO - 等待结果...
+2026-05-18 02:53:15,971 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.332
+2026-05-18 02:53:15,973 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.032
+2026-05-18 02:53:16,177 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.342
+2026-05-18 02:53:16,179 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.069
+2026-05-18 02:53:16,389 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.348
+2026-05-18 02:53:16,390 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:16,623 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.323
+2026-05-18 02:53:16,624 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.020
+2026-05-18 02:53:16,848 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.341
+2026-05-18 02:53:16,849 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.098
+2026-05-18 02:53:17,072 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.322
+2026-05-18 02:53:17,073 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.206
+2026-05-18 02:53:17,300 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.320
+2026-05-18 02:53:17,301 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.223
+2026-05-18 02:53:17,495 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.319
+2026-05-18 02:53:17,496 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.221
+2026-05-18 02:53:17,701 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.328
+2026-05-18 02:53:17,702 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.217
+2026-05-18 02:53:17,911 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.334
+2026-05-18 02:53:17,912 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.209
+2026-05-18 02:53:18,122 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.336
+2026-05-18 02:53:18,123 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.236
+2026-05-18 02:53:18,357 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.334
+2026-05-18 02:53:18,359 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.202
+2026-05-18 02:53:18,567 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.341
+2026-05-18 02:53:18,567 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:18,786 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.345
+2026-05-18 02:53:18,789 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:18,997 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.163
+2026-05-18 02:53:18,997 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:19,195 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.222
+2026-05-18 02:53:19,197 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.070
+2026-05-18 02:53:19,425 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.248
+2026-05-18 02:53:19,426 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.009
+2026-05-18 02:53:19,653 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.248
+2026-05-18 02:53:19,654 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:19,867 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.277
+2026-05-18 02:53:19,868 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:20,093 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.406
+2026-05-18 02:53:20,093 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:20,325 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.377
+2026-05-18 02:53:20,325 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.134
+2026-05-18 02:53:20,548 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.257
+2026-05-18 02:53:20,549 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.158
+2026-05-18 02:53:20,769 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.243
+2026-05-18 02:53:20,770 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:20,982 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.259
+2026-05-18 02:53:20,983 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.116
+2026-05-18 02:53:21,210 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.281
+2026-05-18 02:53:21,211 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:21,441 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.271
+2026-05-18 02:53:21,442 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:21,665 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.280
+2026-05-18 02:53:22,017 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.247
+2026-05-18 02:53:22,017 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.239
+2026-05-18 02:53:22,224 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.221
+2026-05-18 02:53:22,226 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.253
+2026-05-18 02:53:22,440 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.232
+2026-05-18 02:53:22,441 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.277
+2026-05-18 02:53:22,664 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.258
+2026-05-18 02:53:22,665 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.327
+2026-05-18 02:53:22,869 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.268
+2026-05-18 02:53:22,871 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.252
+2026-05-18 02:53:23,082 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.262
+2026-05-18 02:53:23,083 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.261
+2026-05-18 02:53:23,284 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.274
+2026-05-18 02:53:23,285 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.260
+2026-05-18 02:53:23,499 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.241
+2026-05-18 02:53:23,500 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.261
+2026-05-18 02:53:23,708 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.240
+2026-05-18 02:53:23,710 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.318
+2026-05-18 02:53:23,985 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.126
+2026-05-18 02:53:23,987 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.581
+2026-05-18 02:53:23,988 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.445
+2026-05-18 02:53:23,989 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.979
+2026-05-18 02:53:23,989 - MintNTE - INFO - 钓起B级鱼
+2026-05-18 02:53:23,989 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:53:25,559 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:53:25,614 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:53:25,656 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:53:30,741 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:53:30,741 - MintNTE - INFO - 启动跟随
+2026-05-18 02:53:30,745 - MintNTE - INFO - 等待结果...
+2026-05-18 02:53:30,818 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.337
+2026-05-18 02:53:30,819 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.091
+2026-05-18 02:53:31,060 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.343
+2026-05-18 02:53:31,061 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:31,295 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.332
+2026-05-18 02:53:31,296 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.066
+2026-05-18 02:53:31,500 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.330
+2026-05-18 02:53:31,501 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:31,720 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.329
+2026-05-18 02:53:31,721 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:31,935 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.312
+2026-05-18 02:53:31,937 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.060
+2026-05-18 02:53:32,166 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.325
+2026-05-18 02:53:32,167 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:32,395 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.344
+2026-05-18 02:53:32,396 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.070
+2026-05-18 02:53:32,616 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.343
+2026-05-18 02:53:32,618 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:32,837 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.334
+2026-05-18 02:53:32,839 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:33,077 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.322
+2026-05-18 02:53:33,078 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:33,292 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.339
+2026-05-18 02:53:33,293 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:33,517 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.337
+2026-05-18 02:53:33,518 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:33,721 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.334
+2026-05-18 02:53:33,722 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:33,945 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.353
+2026-05-18 02:53:33,948 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:34,176 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.350
+2026-05-18 02:53:34,178 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:34,415 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.334
+2026-05-18 02:53:34,417 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:34,656 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.356
+2026-05-18 02:53:34,657 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:34,886 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.343
+2026-05-18 02:53:34,888 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:35,119 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.340
+2026-05-18 02:53:35,122 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.000
+2026-05-18 02:53:35,343 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.331
+2026-05-18 02:53:35,345 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.050
+2026-05-18 02:53:35,558 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.345
+2026-05-18 02:53:35,925 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.299
+2026-05-18 02:53:35,926 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.269
+2026-05-18 02:53:36,148 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.337
+2026-05-18 02:53:36,150 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.276
+2026-05-18 02:53:36,378 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.213
+2026-05-18 02:53:36,380 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.296
+2026-05-18 02:53:36,614 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.208
+2026-05-18 02:53:36,615 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.278
+2026-05-18 02:53:36,831 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.200
+2026-05-18 02:53:36,832 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.289
+2026-05-18 02:53:37,077 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.260
+2026-05-18 02:53:37,078 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.350
+2026-05-18 02:53:37,308 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.307
+2026-05-18 02:53:37,311 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.257
+2026-05-18 02:53:37,540 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.203
+2026-05-18 02:53:37,541 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.255
+2026-05-18 02:53:37,775 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.695
+2026-05-18 02:53:37,776 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.300
+2026-05-18 02:53:38,088 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.085
+2026-05-18 02:53:38,088 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.517
+2026-05-18 02:53:38,089 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.996
+2026-05-18 02:53:38,090 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.560
+2026-05-18 02:53:38,090 - MintNTE - INFO - 钓起A级鱼
+2026-05-18 02:53:38,090 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:53:39,661 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:53:39,731 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:53:39,794 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:53:46,706 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:53:46,707 - MintNTE - INFO - 启动跟随
+2026-05-18 02:53:46,712 - MintNTE - INFO - 等待结果...
+2026-05-18 02:53:46,789 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.346
+2026-05-18 02:53:46,790 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.221
+2026-05-18 02:53:47,036 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.339
+2026-05-18 02:53:47,039 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.287
+2026-05-18 02:53:47,268 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.346
+2026-05-18 02:53:47,272 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.280
+2026-05-18 02:53:47,493 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.342
+2026-05-18 02:53:47,494 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.344
+2026-05-18 02:53:47,717 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.338
+2026-05-18 02:53:47,718 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.330
+2026-05-18 02:53:47,962 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.334
+2026-05-18 02:53:47,963 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.325
+2026-05-18 02:53:48,194 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.321
+2026-05-18 02:53:48,195 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.286
+2026-05-18 02:53:48,416 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.317
+2026-05-18 02:53:48,418 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.272
+2026-05-18 02:53:48,665 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.336
+2026-05-18 02:53:48,666 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.296
+2026-05-18 02:53:48,914 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.337
+2026-05-18 02:53:48,915 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.291
+2026-05-18 02:53:49,131 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.334
+2026-05-18 02:53:49,133 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.267
+2026-05-18 02:53:49,365 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.322
+2026-05-18 02:53:49,367 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.290
+2026-05-18 02:53:49,600 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.307
+2026-05-18 02:53:49,602 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.267
+2026-05-18 02:53:49,836 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.317
+2026-05-18 02:53:49,837 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.414
+2026-05-18 02:53:50,056 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.314
+2026-05-18 02:53:50,057 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.457
+2026-05-18 02:53:50,280 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.314
+2026-05-18 02:53:50,282 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.283
+2026-05-18 02:53:50,490 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.330
+2026-05-18 02:53:50,492 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.273
+2026-05-18 02:53:50,871 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.328
+2026-05-18 02:53:50,872 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.271
+2026-05-18 02:53:51,096 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.331
+2026-05-18 02:53:51,097 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.258
+2026-05-18 02:53:51,306 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.316
+2026-05-18 02:53:51,308 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.166
+2026-05-18 02:53:51,526 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.306
+2026-05-18 02:53:51,886 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.314
+2026-05-18 02:53:51,887 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.234
+2026-05-18 02:53:52,109 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.287
+2026-05-18 02:53:52,110 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.248
+2026-05-18 02:53:52,344 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.253
+2026-05-18 02:53:52,345 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.222
+2026-05-18 02:53:52,569 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.260
+2026-05-18 02:53:52,573 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.240
+2026-05-18 02:53:52,791 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.250
+2026-05-18 02:53:52,792 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.271
+2026-05-18 02:53:53,000 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.282
+2026-05-18 02:53:53,001 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.271
+2026-05-18 02:53:53,220 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.335
+2026-05-18 02:53:53,222 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.212
+2026-05-18 02:53:53,452 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.251
+2026-05-18 02:53:53,454 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.340
+2026-05-18 02:53:53,667 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.546
+2026-05-18 02:53:53,668 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.336
+2026-05-18 02:53:53,961 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.035
+2026-05-18 02:53:53,961 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.581
+2026-05-18 02:53:53,962 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.445
+2026-05-18 02:53:53,962 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.968
+2026-05-18 02:53:53,962 - MintNTE - INFO - 钓起B级鱼
+2026-05-18 02:53:53,962 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:53:55,529 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:53:55,578 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:53:55,626 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:54:00,546 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:54:00,546 - MintNTE - INFO - 启动跟随
+2026-05-18 02:54:00,548 - MintNTE - INFO - 等待结果...
+2026-05-18 02:54:00,623 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.358
+2026-05-18 02:54:00,624 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.472
+2026-05-18 02:54:00,841 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.357
+2026-05-18 02:54:00,842 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.390
+2026-05-18 02:54:01,079 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.347
+2026-05-18 02:54:01,080 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.494
+2026-05-18 02:54:01,321 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.353
+2026-05-18 02:54:01,323 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.489
+2026-05-18 02:54:01,565 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.354
+2026-05-18 02:54:01,567 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.351
+2026-05-18 02:54:01,791 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.356
+2026-05-18 02:54:01,792 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.416
+2026-05-18 02:54:02,231 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.350
+2026-05-18 02:54:02,251 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.599
+2026-05-18 02:54:02,495 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.354
+2026-05-18 02:54:02,496 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.291
+2026-05-18 02:54:02,753 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.341
+2026-05-18 02:54:02,754 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.288
+2026-05-18 02:54:02,982 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.319
+2026-05-18 02:54:02,983 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.291
+2026-05-18 02:54:03,226 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.326
+2026-05-18 02:54:03,227 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.289
+2026-05-18 02:54:03,444 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.321
+2026-05-18 02:54:03,450 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.273
+2026-05-18 02:54:03,688 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.315
+2026-05-18 02:54:03,689 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.280
+2026-05-18 02:54:03,914 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.311
+2026-05-18 02:54:03,916 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.279
+2026-05-18 02:54:04,147 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.336
+2026-05-18 02:54:04,148 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.480
+2026-05-18 02:54:04,361 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.329
+2026-05-18 02:54:04,363 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.545
+2026-05-18 02:54:04,601 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.335
+2026-05-18 02:54:04,603 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.286
+2026-05-18 02:54:04,832 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.341
+2026-05-18 02:54:04,834 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.248
+2026-05-18 02:54:05,066 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.331
+2026-05-18 02:54:05,067 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.135
+2026-05-18 02:54:05,301 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.320
+2026-05-18 02:54:05,678 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.277
+2026-05-18 02:54:05,679 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.247
+2026-05-18 02:54:05,899 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.189
+2026-05-18 02:54:05,901 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.271
+2026-05-18 02:54:06,133 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.196
+2026-05-18 02:54:06,134 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.329
+2026-05-18 02:54:06,387 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.184
+2026-05-18 02:54:06,388 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.235
+2026-05-18 02:54:06,617 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.253
+2026-05-18 02:54:06,629 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.294
+2026-05-18 02:54:06,877 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.310
+2026-05-18 02:54:06,878 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.259
+2026-05-18 02:54:07,116 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.279
+2026-05-18 02:54:07,118 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.240
+2026-05-18 02:54:07,380 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.464
+2026-05-18 02:54:07,381 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.235
+2026-05-18 02:54:07,680 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.085
+2026-05-18 02:54:07,681 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.581
+2026-05-18 02:54:07,682 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.445
+2026-05-18 02:54:07,683 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.973
+2026-05-18 02:54:07,684 - MintNTE - INFO - 钓起B级鱼
+2026-05-18 02:54:07,684 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:54:09,251 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:54:09,324 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:54:09,387 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:54:16,313 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:54:16,314 - MintNTE - INFO - 启动跟随
+2026-05-18 02:54:16,317 - MintNTE - INFO - 等待结果...
+2026-05-18 02:54:16,414 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.353
+2026-05-18 02:54:16,415 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.359
+2026-05-18 02:54:16,665 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.353
+2026-05-18 02:54:16,670 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.272
+2026-05-18 02:54:16,910 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.347
+2026-05-18 02:54:16,911 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.227
+2026-05-18 02:54:17,143 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.324
+2026-05-18 02:54:17,145 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.150
+2026-05-18 02:54:17,376 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.313
+2026-05-18 02:54:17,377 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.194
+2026-05-18 02:54:17,595 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.319
+2026-05-18 02:54:17,596 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.222
+2026-05-18 02:54:17,847 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.309
+2026-05-18 02:54:17,849 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.243
+2026-05-18 02:54:18,081 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.312
+2026-05-18 02:54:18,083 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.242
+2026-05-18 02:54:18,329 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.290
+2026-05-18 02:54:18,330 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.277
+2026-05-18 02:54:18,565 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.333
+2026-05-18 02:54:18,567 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.268
+2026-05-18 02:54:18,948 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.324
+2026-05-18 02:54:18,949 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.217
+2026-05-18 02:54:19,179 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.311
+2026-05-18 02:54:19,181 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.268
+2026-05-18 02:54:19,408 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.320
+2026-05-18 02:54:19,409 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.278
+2026-05-18 02:54:19,627 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.321
+2026-05-18 02:54:19,629 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.277
+2026-05-18 02:54:19,857 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.317
+2026-05-18 02:54:19,861 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.273
+2026-05-18 02:54:20,077 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.328
+2026-05-18 02:54:20,078 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.210
+2026-05-18 02:54:20,303 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.330
+2026-05-18 02:54:20,304 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.264
+2026-05-18 02:54:20,543 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.327
+2026-05-18 02:54:20,545 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.228
+2026-05-18 02:54:20,760 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.328
+2026-05-18 02:54:20,761 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.265
+2026-05-18 02:54:20,997 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.316
+2026-05-18 02:54:20,998 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.353
+2026-05-18 02:54:21,221 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.329
+2026-05-18 02:54:21,222 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.403
+2026-05-18 02:54:21,448 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.328
+2026-05-18 02:54:21,449 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.340
+2026-05-18 02:54:21,659 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.318
+2026-05-18 02:54:21,660 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.194
+2026-05-18 02:54:21,884 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.307
+2026-05-18 02:54:21,889 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.201
+2026-05-18 02:54:22,104 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.236
+2026-05-18 02:54:22,110 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.227
+2026-05-18 02:54:22,324 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.290
+2026-05-18 02:54:22,325 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.215
+2026-05-18 02:54:22,552 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.295
+2026-05-18 02:54:22,554 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.265
+2026-05-18 02:54:22,808 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.246
+2026-05-18 02:54:22,809 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.222
+2026-05-18 02:54:23,019 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.218
+2026-05-18 02:54:23,021 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.247
+2026-05-18 02:54:23,254 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.219
+2026-05-18 02:54:23,256 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.235
+2026-05-18 02:54:23,492 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.247
+2026-05-18 02:54:23,493 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.317
+2026-05-18 02:54:23,706 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.277
+2026-05-18 02:54:23,707 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.339
+2026-05-18 02:54:23,920 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.247
+2026-05-18 02:54:23,922 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.303
+2026-05-18 02:54:24,144 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.501
+2026-05-18 02:54:24,145 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.316
+2026-05-18 02:54:24,426 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.033
+2026-05-18 02:54:24,427 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.510
+2026-05-18 02:54:24,428 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.999
+2026-05-18 02:54:24,429 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.554
+2026-05-18 02:54:24,429 - MintNTE - INFO - 钓起A级鱼
+2026-05-18 02:54:24,429 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:54:25,999 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:54:26,048 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:54:26,101 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:54:32,221 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:54:32,222 - MintNTE - INFO - 启动跟随
+2026-05-18 02:54:32,275 - MintNTE - INFO - 等待结果...
+2026-05-18 02:54:32,381 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.333
+2026-05-18 02:54:32,385 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.380
+2026-05-18 02:54:32,626 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.358
+2026-05-18 02:54:32,626 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.382
+2026-05-18 02:54:32,862 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.347
+2026-05-18 02:54:32,863 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.474
+2026-05-18 02:54:33,095 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.351
+2026-05-18 02:54:33,097 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.505
+2026-05-18 02:54:33,310 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.171
+2026-05-18 02:54:33,311 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.431
+2026-05-18 02:54:33,540 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.204
+2026-05-18 02:54:33,546 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.554
+2026-05-18 02:54:33,785 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.301
+2026-05-18 02:54:33,789 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.290
+2026-05-18 02:54:34,033 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.350
+2026-05-18 02:54:34,034 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.287
+2026-05-18 02:54:34,265 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.356
+2026-05-18 02:54:34,267 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.270
+2026-05-18 02:54:34,498 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.351
+2026-05-18 02:54:34,500 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.279
+2026-05-18 02:54:34,737 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.342
+2026-05-18 02:54:34,738 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.292
+2026-05-18 02:54:34,964 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.334
+2026-05-18 02:54:34,966 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.351
+2026-05-18 02:54:35,190 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.349
+2026-05-18 02:54:35,192 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.513
+2026-05-18 02:54:35,426 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.321
+2026-05-18 02:54:35,427 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.364
+2026-05-18 02:54:35,661 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.323
+2026-05-18 02:54:35,662 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.441
+2026-05-18 02:54:35,898 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.339
+2026-05-18 02:54:35,900 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.339
+2026-05-18 02:54:36,150 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.301
+2026-05-18 02:54:36,152 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.388
+2026-05-18 02:54:36,386 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.182
+2026-05-18 02:54:36,388 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.624
+2026-05-18 02:54:36,615 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.184
+2026-05-18 02:54:36,618 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.279
+2026-05-18 02:54:36,852 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.354
+2026-05-18 02:54:36,854 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.344
+2026-05-18 02:54:37,076 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.332
+2026-05-18 02:54:37,078 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.295
+2026-05-18 02:54:37,294 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.334
+2026-05-18 02:54:37,295 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.257
+2026-05-18 02:54:37,533 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.318
+2026-05-18 02:54:37,535 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.282
+2026-05-18 02:54:37,763 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.332
+2026-05-18 02:54:37,763 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.405
+2026-05-18 02:54:37,993 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.354
+2026-05-18 02:54:38,370 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.248
+2026-05-18 02:54:38,372 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.263
+2026-05-18 02:54:38,598 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.231
+2026-05-18 02:54:38,600 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.249
+2026-05-18 02:54:38,832 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.271
+2026-05-18 02:54:38,834 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.268
+2026-05-18 02:54:39,066 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.304
+2026-05-18 02:54:39,067 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.232
+2026-05-18 02:54:39,300 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.244
+2026-05-18 02:54:39,302 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.276
+2026-05-18 02:54:39,535 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.229
+2026-05-18 02:54:39,536 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.238
+2026-05-18 02:54:39,773 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.214
+2026-05-18 02:54:39,774 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.316
+2026-05-18 02:54:39,988 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.245
+2026-05-18 02:54:39,990 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.317
+2026-05-18 02:54:40,226 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.693
+2026-05-18 02:54:40,229 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.317
+2026-05-18 02:54:40,493 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.057
+2026-05-18 02:54:40,494 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.517
+2026-05-18 02:54:40,495 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.998
+2026-05-18 02:54:40,497 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.559
+2026-05-18 02:54:40,497 - MintNTE - INFO - 钓起A级鱼
+2026-05-18 02:54:40,498 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:54:42,069 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:54:42,143 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:54:42,209 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:54:48,732 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:54:48,732 - MintNTE - INFO - 启动跟随
+2026-05-18 02:54:48,734 - MintNTE - INFO - 等待结果...
+2026-05-18 02:54:48,822 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.306
+2026-05-18 02:54:48,823 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.143
+2026-05-18 02:54:49,059 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.205
+2026-05-18 02:54:49,059 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.272
+2026-05-18 02:54:49,273 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.353
+2026-05-18 02:54:49,274 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.460
+2026-05-18 02:54:49,486 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.348
+2026-05-18 02:54:49,487 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.405
+2026-05-18 02:54:49,710 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.368
+2026-05-18 02:54:49,712 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.562
+2026-05-18 02:54:49,949 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.361
+2026-05-18 02:54:49,951 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.607
+2026-05-18 02:54:50,161 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.170
+2026-05-18 02:54:50,164 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.595
+2026-05-18 02:54:50,378 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.176
+2026-05-18 02:54:50,379 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.499
+2026-05-18 02:54:50,589 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.167
+2026-05-18 02:54:50,590 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.490
+2026-05-18 02:54:50,822 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.174
+2026-05-18 02:54:50,824 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.483
+2026-05-18 02:54:51,054 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.176
+2026-05-18 02:54:51,055 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.453
+2026-05-18 02:54:51,280 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.192
+2026-05-18 02:54:51,281 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.131
+2026-05-18 02:54:51,516 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.184
+2026-05-18 02:54:51,517 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.127
+2026-05-18 02:54:51,745 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.259
+2026-05-18 02:54:51,746 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.222
+2026-05-18 02:54:51,956 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.264
+2026-05-18 02:54:51,958 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.124
+2026-05-18 02:54:52,175 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.268
+2026-05-18 02:54:52,176 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.155
+2026-05-18 02:54:52,397 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.266
+2026-05-18 02:54:52,398 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.134
+2026-05-18 02:54:52,614 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.268
+2026-05-18 02:54:52,614 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.137
+2026-05-18 02:54:52,834 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.267
+2026-05-18 02:54:52,835 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.196
+2026-05-18 02:54:53,057 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.264
+2026-05-18 02:54:53,058 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.176
+2026-05-18 02:54:53,287 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.290
+2026-05-18 02:54:53,289 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.366
+2026-05-18 02:54:53,505 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.284
+2026-05-18 02:54:53,507 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.289
+2026-05-18 02:54:53,725 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.284
+2026-05-18 02:54:53,728 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.354
+2026-05-18 02:54:53,956 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.254
+2026-05-18 02:54:53,957 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.346
+2026-05-18 02:54:54,188 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.197
+2026-05-18 02:54:54,190 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.278
+2026-05-18 02:54:54,403 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.258
+2026-05-18 02:54:54,404 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.309
+2026-05-18 02:54:54,629 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.227
+2026-05-18 02:54:54,631 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.341
+2026-05-18 02:54:54,853 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.237
+2026-05-18 02:54:54,854 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.202
+2026-05-18 02:54:55,098 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.284
+2026-05-18 02:54:55,099 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.290
+2026-05-18 02:54:55,307 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.264
+2026-05-18 02:54:55,308 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.270
+2026-05-18 02:54:55,517 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.250
+2026-05-18 02:54:55,519 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.266
+2026-05-18 02:54:55,744 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.242
+2026-05-18 02:54:55,745 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.379
+2026-05-18 02:54:55,970 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.543
+2026-05-18 02:54:55,972 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.247
+2026-05-18 02:54:56,329 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.085
+2026-05-18 02:54:56,330 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.581
+2026-05-18 02:54:56,331 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.444
+2026-05-18 02:54:56,332 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.970
+2026-05-18 02:54:56,333 - MintNTE - INFO - 钓起B级鱼
+2026-05-18 02:54:56,333 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:54:57,904 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:54:57,967 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:54:58,031 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:55:05,113 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:55:05,113 - MintNTE - INFO - 启动跟随
+2026-05-18 02:55:05,120 - MintNTE - INFO - 等待结果...
+2026-05-18 02:55:05,201 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.337
+2026-05-18 02:55:05,201 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.522
+2026-05-18 02:55:05,450 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.329
+2026-05-18 02:55:05,451 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.279
+2026-05-18 02:55:05,693 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.323
+2026-05-18 02:55:05,695 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.277
+2026-05-18 02:55:05,913 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.295
+2026-05-18 02:55:05,914 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.309
+2026-05-18 02:55:06,148 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.317
+2026-05-18 02:55:06,150 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.388
+2026-05-18 02:55:06,358 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.340
+2026-05-18 02:55:06,359 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.309
+2026-05-18 02:55:06,578 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.337
+2026-05-18 02:55:06,579 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.362
+2026-05-18 02:55:06,812 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.343
+2026-05-18 02:55:06,813 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.202
+2026-05-18 02:55:07,031 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.326
+2026-05-18 02:55:07,033 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.330
+2026-05-18 02:55:07,268 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.325
+2026-05-18 02:55:07,271 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.378
+2026-05-18 02:55:07,504 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.335
+2026-05-18 02:55:07,505 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.259
+2026-05-18 02:55:07,744 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.340
+2026-05-18 02:55:07,745 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.171
+2026-05-18 02:55:07,981 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.323
+2026-05-18 02:55:07,982 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.353
+2026-05-18 02:55:08,222 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.326
+2026-05-18 02:55:08,224 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.349
+2026-05-18 02:55:08,435 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.327
+2026-05-18 02:55:08,439 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.317
+2026-05-18 02:55:08,666 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.328
+2026-05-18 02:55:08,668 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.296
+2026-05-18 02:55:08,894 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.325
+2026-05-18 02:55:08,895 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.193
+2026-05-18 02:55:09,117 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.315
+2026-05-18 02:55:09,118 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.199
+2026-05-18 02:55:09,357 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.291
+2026-05-18 02:55:09,359 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.202
+2026-05-18 02:55:09,591 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.325
+2026-05-18 02:55:09,592 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.112
+2026-05-18 02:55:09,805 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.323
+2026-05-18 02:55:09,806 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.121
+2026-05-18 02:55:10,024 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.333
+2026-05-18 02:55:10,026 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.121
+2026-05-18 02:55:10,236 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.326
+2026-05-18 02:55:10,238 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.129
+2026-05-18 02:55:10,470 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.328
+2026-05-18 02:55:10,474 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.171
+2026-05-18 02:55:10,695 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.327
+2026-05-18 02:55:10,695 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.131
+2026-05-18 02:55:10,926 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.333
+2026-05-18 02:55:10,927 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.154
+2026-05-18 02:55:11,137 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.332
+2026-05-18 02:55:11,138 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.104
+2026-05-18 02:55:11,350 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.334
+2026-05-18 02:55:11,351 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.117
+2026-05-18 02:55:11,564 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.340
+2026-05-18 02:55:11,564 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.094
+2026-05-18 02:55:11,772 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.343
+2026-05-18 02:55:11,774 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.171
+2026-05-18 02:55:12,014 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.341
+2026-05-18 02:55:12,015 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.130
+2026-05-18 02:55:12,228 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.316
+2026-05-18 02:55:12,229 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.179
+2026-05-18 02:55:12,485 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.319
+2026-05-18 02:55:12,487 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.178
+2026-05-18 02:55:12,715 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.326
+2026-05-18 02:55:12,717 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.186
+2026-05-18 02:55:12,931 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.342
+2026-05-18 02:55:12,934 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.176
+2026-05-18 02:55:13,167 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.323
+2026-05-18 02:55:13,168 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.198
+2026-05-18 02:55:13,401 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.321
+2026-05-18 02:55:13,404 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.186
+2026-05-18 02:55:13,627 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.316
+2026-05-18 02:55:13,628 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.184
+2026-05-18 02:55:13,842 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.341
+2026-05-18 02:55:13,843 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.114
+2026-05-18 02:55:14,063 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.336
+2026-05-18 02:55:14,064 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.120
+2026-05-18 02:55:14,285 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.344
+2026-05-18 02:55:14,286 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.104
+2026-05-18 02:55:14,508 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.344
+2026-05-18 02:55:14,510 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.113
+2026-05-18 02:55:14,734 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.335
+2026-05-18 02:55:14,735 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.123
+2026-05-18 02:55:14,953 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.262
+2026-05-18 02:55:14,956 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.269
+2026-05-18 02:55:15,191 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.318
+2026-05-18 02:55:15,192 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.361
+2026-05-18 02:55:15,430 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.255
+2026-05-18 02:55:15,432 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.283
+2026-05-18 02:55:15,666 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.247
+2026-05-18 02:55:15,667 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.277
+2026-05-18 02:55:15,884 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.366
+2026-05-18 02:55:15,885 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.277
+2026-05-18 02:55:16,115 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.271
+2026-05-18 02:55:16,116 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.277
+2026-05-18 02:55:16,373 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.225
+2026-05-18 02:55:16,375 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.342
+2026-05-18 02:55:16,636 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.260
+2026-05-18 02:55:16,641 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.269
+2026-05-18 02:55:16,876 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.241
+2026-05-18 02:55:16,878 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.253
+2026-05-18 02:55:17,097 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.589
+2026-05-18 02:55:17,098 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.291
+2026-05-18 02:55:17,360 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=0.076
+2026-05-18 02:55:17,361 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.520
+2026-05-18 02:55:17,361 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.991
+2026-05-18 02:55:17,362 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.557
+2026-05-18 02:55:17,363 - MintNTE - INFO - 钓起A级鱼
+2026-05-18 02:55:17,363 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:55:18,932 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:55:18,982 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:55:19,043 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:55:24,967 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:55:24,967 - MintNTE - INFO - 启动跟随
+2026-05-18 02:55:24,969 - MintNTE - INFO - 等待结果...
+2026-05-18 02:55:25,060 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.333
+2026-05-18 02:55:25,061 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.133
+2026-05-18 02:55:25,286 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.364
+2026-05-18 02:55:25,287 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.116
+2026-05-18 02:55:25,511 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.373
+2026-05-18 02:55:25,511 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.137
+2026-05-18 02:55:25,744 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.379
+2026-05-18 02:55:25,746 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.123
+2026-05-18 02:55:25,978 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.175
+2026-05-18 02:55:25,979 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.136
+2026-05-18 02:55:26,193 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.187
+2026-05-18 02:55:26,195 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.147
+2026-05-18 02:55:26,415 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.168
+2026-05-18 02:55:26,416 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.107
+2026-05-18 02:55:26,636 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.198
+2026-05-18 02:55:26,638 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.173
+2026-05-18 02:55:26,851 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.173
+2026-05-18 02:55:26,851 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.134
+2026-05-18 02:55:27,066 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.173
+2026-05-18 02:55:27,067 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.137
+2026-05-18 02:55:27,271 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.154
+2026-05-18 02:55:27,272 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.149
+2026-05-18 02:55:27,491 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.210
+2026-05-18 02:55:27,492 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.139
+2026-05-18 02:55:27,706 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.160
+2026-05-18 02:55:27,706 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.138
+2026-05-18 02:55:27,922 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.175
+2026-05-18 02:55:27,922 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.137
+2026-05-18 02:55:28,140 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.156
+2026-05-18 02:55:28,141 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.153
+2026-05-18 02:55:28,361 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.271
+2026-05-18 02:55:28,362 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.161
+2026-05-18 02:55:28,578 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.297
+2026-05-18 02:55:28,578 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.147
+2026-05-18 02:55:28,792 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.294
+2026-05-18 02:55:28,793 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.112
+2026-05-18 02:55:29,020 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.283
+2026-05-18 02:55:29,022 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.136
+2026-05-18 02:55:29,231 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.288
+2026-05-18 02:55:29,232 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.144
+2026-05-18 02:55:29,458 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.281
+2026-05-18 02:55:29,460 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.275
+2026-05-18 02:55:29,707 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.293
+2026-05-18 02:55:30,085 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.198
+2026-05-18 02:55:30,086 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.251
+2026-05-18 02:55:30,334 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.227
+2026-05-18 02:55:30,335 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.278
+2026-05-18 02:55:30,563 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.221
+2026-05-18 02:55:30,564 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.332
+2026-05-18 02:55:30,772 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.206
+2026-05-18 02:55:30,773 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.286
+2026-05-18 02:55:31,009 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.270
+2026-05-18 02:55:31,011 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.327
+2026-05-18 02:55:31,243 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.255
+2026-05-18 02:55:31,244 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.248
+2026-05-18 02:55:31,472 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.263
+2026-05-18 02:55:31,474 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.224
+2026-05-18 02:55:31,701 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.253
+2026-05-18 02:55:31,702 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.245
+2026-05-18 02:55:32,043 - MintNTE - INFO - [鱼获识别] fish_gone 匹配度=-0.017
+2026-05-18 02:55:32,044 - MintNTE - INFO - [鱼获识别] rank_s 匹配度=0.581
+2026-05-18 02:55:32,045 - MintNTE - INFO - [鱼获识别] rank_a 匹配度=0.445
+2026-05-18 02:55:32,046 - MintNTE - INFO - [鱼获识别] rank_b 匹配度=0.980
+2026-05-18 02:55:32,047 - MintNTE - INFO - 钓起B级鱼
+2026-05-18 02:55:32,048 - MintNTE - INFO - 钓鱼成功，后台按 ESC
+2026-05-18 02:55:33,625 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:55:33,681 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:55:33,728 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:56:51,391 - MintNTE - INFO - ============================================================
+2026-05-18 02:56:51,391 - MintNTE - INFO - 📋 日志策略：本文件每天午夜自动切片，最多保留最近 7 天的日志，旧日志将自动删除。
+2026-05-18 02:56:51,391 - MintNTE - INFO - ============================================================
+2026-05-18 02:56:51,926 - MintNTE - INFO - 锁定窗口: 异环   (句柄: 1903656)
+2026-05-18 02:56:53,182 - MintNTE - INFO - 已注册热键: fishing -> f1
+2026-05-18 02:56:53,182 - MintNTE - INFO - 已注册热键: task -> alt+f2
+2026-05-18 02:56:53,182 - MintNTE - INFO - 功能 macro 未设置快捷键，跳过注册
+2026-05-18 02:56:53,183 - MintNTE - INFO - 功能 fortissimo 未设置快捷键，跳过注册
+2026-05-18 02:56:53,183 - MintNTE - INFO - 功能 driving 未设置快捷键，跳过注册
+2026-05-18 02:56:53,194 - MintNTE - INFO - 主窗口初始化完成
+2026-05-18 02:56:53,515 - MintNTE - INFO - 程序启动完成
+2026-05-18 02:56:58,309 - MintNTE - INFO - 热键按下: fishing
+2026-05-18 02:56:58,311 - MintNTE - INFO - 热键触发: fishing
+2026-05-18 02:56:58,311 - MintNTE - INFO - 钓鱼已开始
+2026-05-18 02:56:58,313 - MintNTE - INFO - 开始循环钓鱼
+2026-05-18 02:56:58,314 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:56:58,400 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:56:58,469 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:56:59,826 - MintNTE - INFO - 已注册热键: fishing -> f1
+2026-05-18 02:56:59,827 - MintNTE - INFO - 已注册热键: task -> alt+f2
+2026-05-18 02:56:59,827 - MintNTE - INFO - 功能 macro 未设置快捷键，跳过注册
+2026-05-18 02:56:59,827 - MintNTE - INFO - 功能 fortissimo 未设置快捷键，跳过注册
+2026-05-18 02:56:59,827 - MintNTE - INFO - 功能 driving 未设置快捷键，跳过注册
+2026-05-18 02:57:04,452 - MintNTE - INFO - 检测到结束图标，停止按F
+2026-05-18 02:57:04,453 - MintNTE - INFO - 启动跟随
+2026-05-18 02:57:04,458 - MintNTE - INFO - 等待结果...
+2026-05-18 02:57:04,548 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.350
+2026-05-18 02:57:04,548 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.123
+2026-05-18 02:57:04,729 - MintNTE - INFO - 热键按下: fishing
+2026-05-18 02:57:04,744 - MintNTE - INFO - 热键触发: fishing
+2026-05-18 02:57:04,768 - MintNTE - INFO - [等待结果] dianjikongbai 匹配度=0.349
+2026-05-18 02:57:04,768 - MintNTE - INFO - [等待结果] panduandiaoyu 匹配度=0.159
+2026-05-18 02:57:04,961 - MintNTE - INFO - 未知状态，退出本次钓鱼
+2026-05-18 02:57:04,962 - MintNTE - INFO - 结束，共钓鱼 0 条 (A:0 B:0 S:0)
+2026-05-18 02:57:04,963 - MintNTE - INFO - 钓鱼已停止
+2026-05-18 02:57:08,047 - MintNTE - INFO - 热键按下: fishing
+2026-05-18 02:57:08,048 - MintNTE - INFO - 热键触发: fishing
+2026-05-18 02:57:08,049 - MintNTE - INFO - 钓鱼已开始
+2026-05-18 02:57:08,050 - MintNTE - INFO - 开始循环钓鱼
+2026-05-18 02:57:08,050 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:57:11,052 - MintNTE - INFO - 监测中...
+2026-05-18 02:57:14,130 - MintNTE - INFO - 监测中...
+2026-05-18 02:57:15,249 - MintNTE - INFO - 开始钓鱼 (前台点击)
+2026-05-18 02:57:16,566 - MintNTE - INFO - 开始钓鱼 (前台点击)
+2026-05-18 02:57:16,856 - MintNTE - INFO - 热键按下: fishing
+2026-05-18 02:57:16,857 - MintNTE - INFO - 热键触发: fishing
+2026-05-18 02:57:17,808 - MintNTE - INFO - 启动跟随
+2026-05-18 02:57:17,809 - MintNTE - INFO - 跟随功能已关闭
+2026-05-18 02:57:17,809 - MintNTE - ERROR - 跟随启动失败，放弃本次钓鱼
+2026-05-18 02:57:17,810 - MintNTE - INFO - 结束，共钓鱼 0 条 (A:0 B:0 S:0)
+2026-05-18 02:57:17,810 - MintNTE - INFO - 钓鱼已停止
+2026-05-18 02:57:21,596 - MintNTE - INFO - 热键按下: fishing
+2026-05-18 02:57:21,596 - MintNTE - INFO - 热键触发: fishing
+2026-05-18 02:57:21,597 - MintNTE - INFO - 钓鱼已开始
+2026-05-18 02:57:21,597 - MintNTE - INFO - 开始循环钓鱼
+2026-05-18 02:57:21,597 - MintNTE - INFO - 开始监测图像...
+2026-05-18 02:57:21,667 - MintNTE - INFO - 开始钓鱼 (前台点击)
+2026-05-18 02:57:23,003 - MintNTE - INFO - 开始钓鱼 (前台点击)
+2026-05-18 02:57:24,308 - MintNTE - INFO - 开始钓鱼 (前台点击)
+2026-05-18 02:57:25,614 - MintNTE - INFO - 当前在钓鱼界面全速后台钓鱼
+2026-05-18 02:57:25,680 - MintNTE - INFO - 检测到鱼钩，开始持续按F
+2026-05-18 02:57:31,779 - MintNTE - INFO - 启动跟随
+2026-05-18 02:57:31,781 - MintNTE - INFO - 等待结果...
+2026-05-18 02:57:31,836 - MintNTE - INFO - 未知状态，退出本次钓鱼
+2026-05-18 02:57:31,837 - MintNTE - INFO - 结束，共钓鱼 0 条 (A:0 B:0 S:0)
+2026-05-18 02:57:31,840 - MintNTE - INFO - 钓鱼已停止
