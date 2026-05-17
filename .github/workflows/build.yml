@@ -43,3 +43,4 @@ jobs:
           files: dist/MintNTE.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+!.github/workflows/build.yml
