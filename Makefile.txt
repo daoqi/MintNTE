@@ -1,0 +1,14 @@
+PYTHON = python
+MAIN = main.py
+
+run:
+	$(PYTHON) $(MAIN)
+
+clean:
+	del neon_console.log config.json
+
+install:
+	pip install -r requirements.txt
+
+pack:
+	pyinstaller --onefile --windowed $(MAIN)
