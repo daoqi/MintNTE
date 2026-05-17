@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>快捷键帮助</title>
+    <style>
+        body {
+            background-color: #0a0a18;
+            color: #00f0ff;
+            font-family: 'Microsoft YaHei', sans-serif;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        h1 {
+            color: #00f2ff;
+            border-bottom: 2px solid #00f0ff;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #ff0011;
+            margin-top: 30px;
+        }
+        .highlight {
+            color: #ff44cc;
+            font-weight: bold;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>⌨️ 快捷键使用说明</h1>
+
+    <h2>🎮 全局热键</h2>
+    <p>在 <span class="highlight">启动设置</span> 页面可以自定义每个功能的快捷键，支持：</p>
+    <ul>
+        <li>单独的功能键：<span class="highlight">F1</span>、<span class="highlight">F2</span> 等</li>
+        <li>带修饰键的组合：<span class="highlight">CTRL+F1</span>、<span class="highlight">ALT+F2</span>、<span class="highlight">CTRL+SHIFT+F3</span> 等</li>
+        <li>普通字母/数字键：<span class="highlight">A</span>、<span class="highlight">Z</span> 等（不推荐，易冲突）</li>
+    </ul>
+    <p>设置完成后，在<span class="highlight">任何程序</span>中按下对应快捷键即可启动/停止对应功能，无需切换到 MintNTE 窗口。</p>
+
+    <h2>🖱️ 如何设置</h2>
+    <ol>
+        <li>点击对应功能右侧的快捷键按钮（显示当前按键）。</li>
+        <li>在弹出的对话框中直接按下你想要的按键（可包含 CTRL、ALT、SHIFT 修饰键）。</li>
+        <li>对话框会实时显示当前按下的组合，按下 <span class="highlight">Enter</span> 或点击“确认”保存。</li>
+        <li>指示灯变为 <span style="color:#00ff00;">🟢</span> 表示注册成功，<span style="color:#ff0000;">🔴</span> 表示冲突，请更换其他组合。</li>
+    </ol>
+
+    <h2>💡 常见问题</h2>
+    <ul>
+        <li><strong>F1~F5 被占用怎么办？</strong> 可以尝试加上 ALT 或 CTRL 修饰键，如 <span class="highlight">ALT+F1</span>。</li>
+        <li><strong>热键按下没反应？</strong> 请确保以管理员权限运行 MintNTE，某些游戏可能独占键盘，可尝试切换到窗口模式测试。</li>
+        <li><strong>指示灯是红色？</strong> 说明快捷键注册失败（可能被其他软件占用），请更换组合键。</li>
+    </ul>
+
+    <p style="margin-top:40px; color:#888;">如有其他问题，请查看程序日志或联系开发者。</p>
+</body>
+</html>

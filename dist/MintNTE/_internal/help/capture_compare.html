@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>截图引擎对比 — MintNTE</title>
+    <style>
+        body {
+            background-color: #0d0d1a;
+            color: #ccc;
+            font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 40px;
+        }
+        h1 {
+            color: #00ddff;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: rgba(0, 20, 40, 0.8);
+            border: 1px solid #0ff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th {
+            background-color: #1a1a3e;
+            color: #0ff;
+            font-weight: bold;
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #0ff;
+        }
+        td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #2a2a4a;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .pros {
+            color: #39ff14;
+        }
+        .cons {
+            color: #ff5555;
+        }
+        .highlight {
+            color: #ffaa00;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🖥️ MintNTE 截图引擎对比</h1>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 15%;">引擎</th>
+                <th style="width: 35%;">优点</th>
+                <th style="width: 35%;">缺点</th>
+                <th style="width: 15%;">推荐场景</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong class="highlight">PrintWindow</strong></td>
+                <td class="pros">
+                    ✅ 完美后台截图（窗口被遮挡/最小化仍可截图）<br>
+                    ✅ 无需安装额外依赖<br>
+                    ✅ 资源占用极低<br>
+                    ✅ 兼容所有 Windows 版本
+                </td>
+                <td class="cons">
+                    ❌ 不支持全屏独占模式（截图黑屏）<br>
+                    ❌ 受限于 DWM（桌面窗口管理器）状态
+                </td>
+                <td><strong>窗口化 / 1920x1080</strong><br>（推荐默认）</td>
+            </tr>
+            <tr>
+                <td><strong class="highlight">dxcam</strong></td>
+                <td class="pros">
+                    ✅ 支持全屏独占游戏截图<br>
+                    ✅ 基于 Desktop Duplication API，速度快<br>
+                    ✅ 可捕获整个屏幕或指定区域
+                </td>
+                <td class="cons">
+                    ❌ 无法后台截图（窗口必须可见）<br>
+                    ❌ 需要安装 dxcam 库<br>
+                    ❌ Windows 10 以上
+                </td>
+                <td><strong>全屏独占</strong>（游戏在全屏模式下运行时）</td>
+            </tr>
+            <tr>
+                <td><strong class="highlight">WGC</strong></td>
+                <td class="pros">
+                    ✅ 支持全屏与窗口化，后台能力优于 dxcam<br>
+                    ✅ Windows 10 2004+ 原生支持，无需额外依赖<br>
+                    ✅ 微软官方推荐的现代截图 API
+                </td>
+                <td class="cons">
+                    ❌ 不能截图最小化的窗口<br>
+                    ❌ 资源占用稍高（相比 PrintWindow）<br>
+                    ❌ 需要较新的 Windows 版本
+                </td>
+                <td><strong>全屏+后台</strong>（游戏在后台但希望继续截图）</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footer">
+        💡 提示：若截图失败或黑屏，请先尝试将游戏改为 <strong>窗口化</strong> 一定是 <strong>1920X1080</strong> 模式，再使用 PrintWindow。
+    </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+from ui.services.logui import info, error, warning, debug, critical

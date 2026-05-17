@@ -1,0 +1,8 @@
+{
+  "name": "fishing",
+  "version": "1.0.0",
+  "description": "UI 构建模块",
+  "author": "daoqi",
+  "min_shell_version": "0.0.1",
+  "dependencies": []
+}
