@@ -1,0 +1,45 @@
+name: 打包并发布 MintNTE
+
+on:
+  push:
+    tags:
+      - 'v*'          # 当你推送 v1.0.0 这样的标签时自动打包
+  workflow_dispatch:   # 允许手动触发
+
+jobs:
+  build:
+    runs-on: windows-latest   # 用 Windows 环境
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: 安装依赖
+        run: |
+          pip install pyinstaller
+          pip install -r requirements.txt
+
+      - name: 打包成单文件
+        run: |
+          pyinstaller --onefile --windowed --icon=Image\logo\titlelogo.ico `
+            --add-data "config.json;." --add-data "version.txt;." `
+            --add-data "config;config" --add-data "Image;Image" `
+            --add-data "help;help" --add-data "plugins;plugins" --add-data "utils;utils" `
+            --hidden-import PyQt5 --hidden-import cv2 --hidden-import numpy --hidden-import PIL `
+            --hidden-import win32gui --hidden-import win32con --hidden-import win32api `
+            --hidden-import ctypes --hidden-import requests --hidden-import json `
+            --hidden-import threading --hidden-import time --hidden-import os `
+            --hidden-import sys --hidden-import keyboard --hidden-import re `
+            --name MintNTE main.py
+
+      - name: 上传到 Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: dist/MintNTE.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
