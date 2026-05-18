@@ -1,4 +1,4 @@
-name: 打包并发布 MintNTE
+name: 打包并发布 MintNTE (含 ZIP)
 
 on:
   push:
@@ -6,7 +6,6 @@ on:
       - 'v*'
   workflow_dispatch:
 
-# 授予工作流创建 Release 的权限
 permissions:
   contents: write
 
@@ -40,10 +39,16 @@ jobs:
             --hidden-import sys --hidden-import keyboard --hidden-import re `
             --name MintNTE main.py
 
-      - name: 上传到 Release
+      - name: 打包 ZIP
+        run: |
+          Compress-Archive -Path dist\MintNTE.exe -DestinationPath MintNTE.zip -Force
+
+      - name: 发布 Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: dist/MintNTE.exe
+          files: |
+            dist/MintNTE.exe
+            MintNTE.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
