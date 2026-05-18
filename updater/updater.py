@@ -5,7 +5,10 @@ from datetime import datetime
 import requests
 from PyQt5.QtCore import QObject, pyqtSignal, QThread
 
-# 日志导入（请根据你的项目实际路径调整，确保 logger 可用）
+# 禁用 SSL 警告（解决某些网络环境下证书验证失败的问题）
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 from ui.services.logger import logger
 
 GITHUB_REPO = "daoqi/MintNTE"
@@ -44,7 +47,7 @@ class CheckUpdateThread(QThread):
         if self._cancel: return
         local = shell_version()
         try:
-            req = requests.get(API_URL, headers={"User-Agent": "MintNTE"}, timeout=10)
+            req = requests.get(API_URL, headers={"User-Agent": "MintNTE"}, timeout=10, verify=False)
             req.raise_for_status()
             data = req.json()
             remote_tag = data["tag_name"].lstrip("v")
@@ -60,7 +63,7 @@ class PluginCheckThread(QThread):
 
     def run(self):
         try:
-            req = requests.get(API_URL, headers={"User-Agent": "MintNTE"}, timeout=10)
+            req = requests.get(API_URL, headers={"User-Agent": "MintNTE"}, timeout=10, verify=False)
             req.raise_for_status()
             body = req.json().get("body", "")
             m = re.search(r'```json\s*(\{.*?\})\s*```', body, re.DOTALL)
@@ -85,7 +88,7 @@ class PluginDownloadThread(QThread):
         root = _root()
         try:
             # 1. 获取 plugins.zip 下载链接
-            req = requests.get(API_URL, headers={"User-Agent": "MintNTE"}, timeout=10)
+            req = requests.get(API_URL, headers={"User-Agent": "MintNTE"}, timeout=10, verify=False)
             req.raise_for_status()
             assets = req.json().get("assets", [])
             url = None
@@ -99,7 +102,7 @@ class PluginDownloadThread(QThread):
 
             # 2. 下载
             self.progress.emit(10, "下载插件包...")
-            with requests.get(url, stream=True, headers={"User-Agent": "MintNTE"}) as r:
+            with requests.get(url, stream=True, headers={"User-Agent": "MintNTE"}, verify=False) as r:
                 r.raise_for_status()
                 total = int(r.headers.get('content-length', 0))
                 tmpf = tempfile.NamedTemporaryFile(delete=False, suffix='.zip')
