@@ -1,0 +1,19 @@
+[package]
+name = "roi_rust_core"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "roi_rust_core"
+crate-type = ["cdylib"]   # 编译成动态链接库，Python 可以加载
+
+[dependencies]
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_Graphics_Gdi",
+] }
+image = { version = "0.25", default-features = false, features = ["bmp"] }
+anyhow = "1.0"
+crossbeam = "0.8"
+pyo3 = { version = "0.22", features = ["extension-module"] }

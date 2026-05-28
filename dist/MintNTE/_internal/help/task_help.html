@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>任务模块使用教程</title>
+    <style>
+        body {
+            background-color: #0a0a18;
+            color: #00f0ff;
+            font-family: 'Microsoft YaHei', sans-serif;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        h1 { color: #00f0ff; border-bottom: 2px solid #00f0ff; }
+        h2 { color: #ffaa00; margin-top: 30px; }
+        .highlight { color: #ff44cc; font-weight: bold; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <h1>📋 任务模块使用教程</h1>
+    <h2>🚀 启动任务</h2>
+    <ul>
+        <li>点击 <span class="highlight">“启动任务”</span> 开始自动处理当前游戏界面中的任务对话、追踪、传送等操作。</li>
+        <li>启动前请确保已锁定游戏窗口，并处于任务界面或附近。</li>
+        <li>如需停止，点击 <span class="highlight">“停止”</span>。</li>
+    </ul>
+    <h2>💬 对话内容选择</h2>
+    <ul>
+        <li><span class="highlight">第一项</span>：后台按 F 键选择第一项对话。</li>
+        <li><span class="highlight">第二项</span>：前台点击第二项位置 (1416, 808)。</li>
+        <li><span class="highlight">第三项</span>：前台点击第三项位置 (1427, 880)。</li>
+        <li>三个选项互斥，请根据需要选择。</li>
+    </ul>
+    <h2>📦 自动拾取</h2>
+    <ul>
+        <li>勾选后，当检测到可拾取物资（hand 图标）时自动按 F 键拾取。</li>
+    </ul>
+    <h2>⏱ 截图延迟</h2>
+    <ul>
+        <li>控制每次循环检测的间隔，默认 50 毫秒。增加可降低 CPU 占用，但可能错过快速出现的界面。</li>
+    </ul>
+    <h2>📸 其他说明</h2>
+    <ul>
+        <li>程序会自动处理获得物品、不可跳过对话、跳过剧情、追踪任务、传送、拍摄、11点赠礼等场景。</li>
+        <li>所有操作依赖图像识别，请确保模板图片与当前游戏界面一致。模板文件位于 <span class="highlight">plugins\task\Taskimages\</span>。</li>
+    </ul>
+    <p style="margin-top:40px; color:#888;">若有界面更新导致识别失败，请重新截取模板。</p>
+</body>
+</html>

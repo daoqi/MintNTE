@@ -1,9 +1,11 @@
 # main.py
 import sys, os, ctypes, json, traceback
 from utils.path_utils import resource_path
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE_DIR)
 
+# ---------- Python 自身提权（无需 Launcher.exe）----------
 def is_admin():
     try:
         return ctypes.windll.shell32.IsUserAnAdmin() != 0
@@ -11,18 +13,11 @@ def is_admin():
         return False
 
 if not is_admin():
-    if getattr(sys, 'frozen', False):
-        launcher_path = resource_path("Launcher.exe")
-        if not os.path.exists(launcher_path):
-            ctypes.windll.user32.MessageBoxW(None, "未找到权限启动器 Launcher.exe", "错误", 0x10)
-            sys.exit(1)
-        ctypes.windll.shell32.ShellExecuteW(None, "runas", launcher_path, None, None, 1)
-        sys.exit(0)
-    else:
-        python_exe = sys.executable
-        script_path = os.path.abspath(__file__)
-        ctypes.windll.shell32.ShellExecuteW(None, "runas", python_exe, f'"{script_path}"', None, 1)
-        sys.exit(0)
+    python_exe = sys.executable
+    params = " ".join([f'"{a}"' if ' ' in a else a for a in sys.argv])
+    ctypes.windll.shell32.ShellExecuteW(None, "runas", python_exe, params, None, 1)
+    sys.exit(0)
+# ------------------------------------------------------------
 
 def play_startup_music():
     music_path = resource_path("Image/logo/boheai.mp3")
