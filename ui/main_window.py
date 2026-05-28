@@ -1,3 +1,4 @@
+# ui/main_window.py
 import json, os, sys, logging
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QTimer
@@ -8,7 +9,7 @@ from ui.theme import THEMES
 from ui.services.logui import get_logger, get_log_file
 from ui.services.logViewerUI import LogViewer
 from ui.controls.button import NeonSelectButton
-from ui.pages import SetupPage, FishingPage, MissionPage, CombatPage, ExchangePage, PinkClawPage, DrivingPage
+from ui.pages import SetupPage, FishingPage, MissionPage, CombatPage, ExchangePage, PinkClawPage, DrivingPage, DarkRacingPage
 from ui.services.window_manager import get_window_manager
 from ui.services.autostart import is_auto_start_enabled, set_auto_start
 from ui.services.tray_icon import TrayIcon
@@ -32,7 +33,7 @@ class MainWindow(QMainWindow):
         self.tray_enabled = config.get("tray_enabled", True)
 
         self.init_ui()
-        last_page = min(config.get("last_page", 0), 6)
+        last_page = min(config.get("last_page", 0), 7)   # 现在有8个页面，索引0-7
         self.switch_page(last_page)
 
         icon_path = resource_path("Image/logo/titlelogo.ico")
@@ -74,7 +75,7 @@ class MainWindow(QMainWindow):
                     self.startup_label.move(geo.right(), geo.top())
                     self.startup_label.show()
             QTimer.singleShot(200, show_logo)
-            QTimer.singleShot(10000, self.startup_label.hide)
+            QTimer.singleShot(5000, self.startup_label.hide)
         else:
             logger.warning(f"启动图片不存在: {logo_path}")
 
@@ -229,12 +230,13 @@ class MainWindow(QMainWindow):
             ExchangePage(theme),
             PinkClawPage(theme),
             DrivingPage(theme),
+            DarkRacingPage(theme),   # 新增
         ]
         for p in self.pages:
             self.stack.addWidget(p)
 
         self.nav_btns = []
-        texts = ["启动", "钓鱼", "任务", "宏", "超强音", "粉爪", "加入我们"]
+        texts = ["启动", "钓鱼", "任务", "宏", "超强音", "粉爪", "加入我们", "黑暗赛车"]  # 新增
         btn_colors = theme["btn_colors"]
         for i, (text, color) in enumerate(zip(texts, btn_colors)):
             btn = NeonSelectButton(text, color)
@@ -296,7 +298,7 @@ class MainWindow(QMainWindow):
     def switch_page(self, index):
         for i, btn in enumerate(self.nav_btns):
             btn.setChecked(i == index)
-        names = ["启动设置", "钓鱼", "任务", "宏", "超强音", "粉爪", "加入我们"]
+        names = ["启动设置", "钓鱼", "任务", "宏", "超强音", "粉爪", "加入我们", "黑暗赛车"]  # 新增
         self.breadcrumb.setText(f" 当前: {names[index]}")
         self.stack.setCurrentIndex(index)
         self.config["last_page"] = index
@@ -323,6 +325,7 @@ class MainWindow(QMainWindow):
             ExchangePage(theme),
             PinkClawPage(theme),
             DrivingPage(theme),
+            DarkRacingPage(theme),   # 新增
         ]
         for p in self.pages:
             self.stack.addWidget(p)

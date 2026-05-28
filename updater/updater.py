@@ -4,13 +4,9 @@ from pathlib import Path
 from datetime import datetime
 import requests
 from PyQt5.QtCore import QObject, pyqtSignal, QThread
-
-# 禁用 SSL 警告（解决某些网络环境下证书验证失败的问题）
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
 from ui.services.logger import logger
-
 GITHUB_REPO = "daoqi/MintNTE"
 API_URL = f"https://api.github.com/repos/{GITHUB_REPO}/releases/latest"
 PLUGINS_DIR = "plugins"

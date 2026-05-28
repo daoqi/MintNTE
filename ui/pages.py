@@ -1,3 +1,4 @@
+# ui/pages.py
 import threading, json, os, sys
 from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, QMessageBox, QCheckBox,
@@ -51,7 +52,23 @@ class SetupPage(BasePage):
         except Exception as e:
             scroll_layout.addWidget(QLabel(f"⚠️ 窗口检测加载失败：{e}"))
 
+        # 自动领取月卡
         monthly_group = QGroupBox("自动领取月卡")
+        monthly_group.setStyleSheet("""
+            QGroupBox {
+                color: #00ffff;
+                border: 1px solid #00ffff;
+                border-radius: 5px;
+                margin-top: 10px;
+                font-weight: bold;
+            }
+            QGroupBox::title {
+                subcontrol-origin: margin;
+                left: 10px;
+                padding: 0 5px;
+                color: #00ffff;
+            }
+        """)
         monthly_layout = QVBoxLayout(monthly_group)
         self.cb_monthly = QCheckBox("自动领取月卡")
         self.cb_monthly.setStyleSheet("color: #00ffff; font-size: 14px;")
@@ -72,6 +89,21 @@ class SetupPage(BasePage):
 
     def setup_shortcut_ui(self, parent_layout):
         group = QGroupBox("快捷键设置")
+        group.setStyleSheet("""
+            QGroupBox {
+                color: #00ffff;
+                border: 1px solid #00ffff;
+                border-radius: 5px;
+                margin-top: 10px;
+                font-weight: bold;
+            }
+            QGroupBox::title {
+                subcontrol-origin: margin;
+                left: 10px;
+                padding: 0 5px;
+                color: #00ffff;
+            }
+        """)
         group_layout = QVBoxLayout(group)
         group_layout.setSpacing(10)
 
@@ -99,6 +131,21 @@ class SetupPage(BasePage):
 
         for func in self.functions:
             func_group = QGroupBox(self.func_labels[func])
+            func_group.setStyleSheet("""
+                QGroupBox {
+                    color: #00ffff;
+                    border: 1px solid #00ffff;
+                    border-radius: 5px;
+                    margin-top: 10px;
+                    font-weight: bold;
+                }
+                QGroupBox::title {
+                    subcontrol-origin: margin;
+                    left: 10px;
+                    padding: 0 5px;
+                    color: #00ffff;
+                }
+            """)
             func_layout = QVBoxLayout(func_group)
             btn_row = QHBoxLayout()
             btn = QPushButton("未设置")
@@ -363,3 +410,15 @@ class DrivingPage(BasePage):
     def __init__(self, theme):
         super().__init__(theme["panel_bg"])
         self.layout.addWidget(QLabel("粉爪功能开发中..."))
+
+class DarkRacingPage(BasePage):
+    def __init__(self, theme):
+        super().__init__(theme["panel_bg"])
+        try:
+            from plugins.dark_racing.dark_racing_ui import DarkRacingUI
+            self.racing_widget = DarkRacingUI()
+            self.layout.addWidget(self.racing_widget)
+        except Exception as e:
+            import traceback
+            QMessageBox.critical(self, "黑暗赛车加载失败", traceback.format_exc())
+            self.layout.addWidget(QLabel(f"⚠️ 黑暗赛车加载失败：{e}"))

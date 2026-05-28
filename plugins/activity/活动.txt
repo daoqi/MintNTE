@@ -1,0 +1,30 @@
+UI新增页面→黑暗赛车界
+开始赛车/停止赛车
+完成次数
+//活动
+while循环
+1565,12,1655,80,宽高(90,68)找到find_activity.bmp按F4 否者按ESC
+1493,417,1609,516,宽高(116,99)找图点击图片中心activity_esc_home.bmp  
+93,33,211,86,宽高(118,53)找到activity_font.bmp或者在24,30,95,92找到activity_img.bmp退出循环
+
+-----------------开始进入比赛---------------------------------
+while循环
+如果在93,33,211,86,宽高(118,53)找到activity_font.bmp或者在24,30,95,92找到activity_img.bmp 
+后点击159,636延迟1秒  点击1695,1016 日志输出进入 黑暗赛车界 
+在区域6,12,102,112,宽高(96,100)找到activity_game_esc.bmp 按住W15秒
+1563,990,1637,1035,宽高(74,45)找图点击图片中心activity_leave.bmp 日志输出离开游戏
+再次找到1565,12,1655,80,宽高(90,68)找到find_activity.bmp记录完成1次退出循环
+
+
+
+PS C:\Users\Administrator> tree D:\Github\MIntNET\plugins\dark_racing\dark_racing_img /F
+卷 AI 的文件夹 PATH 列表
+卷序列号为 3E7F-1A04
+D:\GITHUB\MINTNET\PLUGINS\DARK_RACING\DARK_RACING_IMG
+    activity_esc_home.bmp
+    activity_font.bmp
+    activity_game_esc.bmp
+    activity_img.bmp
+    activity_leave.bmp
+    find_activity.bmp
+你看看还缺少文件吗？
