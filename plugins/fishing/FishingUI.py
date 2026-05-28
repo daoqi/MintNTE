@@ -1,5 +1,6 @@
 # plugins/fishing/FishingUI.py
 import sys, os, threading, time, webbrowser
+from utils.path_utils import resource_path
 from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
     QSpinBox, QDoubleSpinBox, QGroupBox, QMessageBox, QComboBox,
@@ -7,13 +8,6 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtCore import Qt, QTimer, pyqtSignal
 from PyQt5.QtGui import QIcon
-
-def resource_path(relative_path):
-    if getattr(sys, 'frozen', False):
-        base_path = os.path.dirname(sys.executable)
-    else:
-        base_path = os.path.abspath(".")
-    return os.path.join(base_path, relative_path)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 if BASE_DIR not in sys.path:
