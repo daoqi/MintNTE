@@ -62,7 +62,7 @@ class PluginCheckThread(QThread):
             req = requests.get(API_URL, headers={"User-Agent": "MintNTE"}, timeout=10, verify=False)
             req.raise_for_status()
             body = req.json().get("body", "")
-            m = re.search(r'```json\s*(\{.*?\})\s*```', body, re.DOTALL)
+            m = re.search(r'```(?:json)?\s*(\{.*?\})\s*```', body, re.DOTALL)
             if m:
                 versions = json.loads(m.group(1))
             else:
