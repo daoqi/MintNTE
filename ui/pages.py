@@ -396,17 +396,7 @@ class ExchangePage(BasePage):
         except Exception as e:
             self.layout.addWidget(QLabel(f"⚠️ 超强音加载失败：{e}"))
 
-class DrivingPage(BasePage):
-    def __init__(self, theme):
-        super().__init__(theme["panel_bg"])
-        try:
-            from plugins.JoinUs.JoinUsUI import JoinUsUI
-            self.join_widget = JoinUsUI()
-            self.layout.addWidget(self.join_widget)
-        except Exception as e:
-            self.layout.addWidget(QLabel(f"⚠️ 加入我们加载失败：{e}"))
-
-class PincClawPage(BasePage):
+class PinkClawPage(BasePage):
     def __init__(self, theme):
         super().__init__(theme["panel_bg"])
         self.layout.addWidget(QLabel("粉爪功能开发中..."))
@@ -422,3 +412,13 @@ class DarkRacingPage(BasePage):
             import traceback
             QMessageBox.critical(self, "黑暗赛车加载失败", traceback.format_exc())
             self.layout.addWidget(QLabel(f"⚠️ 黑暗赛车加载失败：{e}"))
+
+class DrivingPage(BasePage):
+    def __init__(self, theme):
+        super().__init__(theme["panel_bg"])
+        try:
+            from plugins.JoinUs.JoinUsUI import JoinUsUI
+            self.join_widget = JoinUsUI()
+            self.layout.addWidget(self.join_widget)
+        except Exception as e:
+            self.layout.addWidget(QLabel(f"⚠️ 加入我们加载失败：{e}"))
