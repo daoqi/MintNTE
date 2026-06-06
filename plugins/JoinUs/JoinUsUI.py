@@ -4,7 +4,7 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel,
                              QPushButton, QApplication)
 from PyQt5.QtCore import Qt
-from UI import logui
+from ui.services import logui
 
 class JoinUsUI(QWidget):
     def __init__(self, parent=None):

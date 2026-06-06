@@ -1,7 +1,7 @@
 import threading, time, cv2, numpy as np
 from collections import deque
 import dxcam, win32gui, pydirectinput
-from UI import logui
+from ui.services import logui
 
 MIN_TRIGGER_PIXELS = None
 JUDGE_RADIUS = None

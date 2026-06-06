@@ -6,7 +6,7 @@ import os, sys
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 if BASE_DIR not in sys.path: sys.path.insert(0, BASE_DIR)
 from Module.click.NET_click import send_key_down, send_key_up
-from UI import logui
+from ui.services import logui
 
 MIN_TRIGGER_PIXELS = None
 JUDGE_RADIUS = None

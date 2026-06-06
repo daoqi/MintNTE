@@ -13,7 +13,7 @@ from PIL import Image
 from dataclasses import dataclass, asdict
 from collections import deque
 import json
-from UI.logui import info, error, warning
+from ui.services.logui import info, error, warning
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 if BASE_DIR not in sys.path:

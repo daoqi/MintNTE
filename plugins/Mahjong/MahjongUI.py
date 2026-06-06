@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout, QPushButton
 from PyQt5.QtCore import Qt
-from UI import logui
+from ui.services import logui
 
 logui.info("麻将界面加载")
 logui.error("麻将功能开发中")
