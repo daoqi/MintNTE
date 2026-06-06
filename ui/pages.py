@@ -396,7 +396,7 @@ class ExchangePage(BasePage):
         except Exception as e:
             self.layout.addWidget(QLabel(f"⚠️ 超强音加载失败：{e}"))
 
-class PinkClawPage(BasePage):
+class DrivingPage(BasePage):
     def __init__(self, theme):
         super().__init__(theme["panel_bg"])
         try:
@@ -406,7 +406,7 @@ class PinkClawPage(BasePage):
         except Exception as e:
             self.layout.addWidget(QLabel(f"⚠️ 加入我们加载失败：{e}"))
 
-class DrivingPage(BasePage):
+class PincClawPage(BasePage):
     def __init__(self, theme):
         super().__init__(theme["panel_bg"])
         self.layout.addWidget(QLabel("粉爪功能开发中..."))
