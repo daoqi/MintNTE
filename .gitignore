@@ -19,7 +19,6 @@ dist/
 
 # Generated launchers / archives
 Launcher.exe
-MintNTE.spec
 *.7z
 *.zip
 
