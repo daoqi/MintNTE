@@ -26,7 +26,16 @@ def get_external_path(filename):
 class BasePage(QWidget):
     def __init__(self, bg_color):
         super().__init__()
-        self.setStyleSheet(f"background-color: {bg_color};")
+        self.setObjectName("basePage")
+        self.setStyleSheet(f"""
+            #basePage {{
+                background-color: {bg_color};
+            }}
+            #basePage QLabel {{
+                color: #ffffff;
+                background-color: transparent;
+            }}
+        """)
         self.layout = QVBoxLayout(self)
         self.layout.setContentsMargins(0, 0, 0, 0)
         self.layout.setSpacing(0)
