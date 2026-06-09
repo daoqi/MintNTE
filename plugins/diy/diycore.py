@@ -19,9 +19,16 @@ def find_window(title):
     hwnd = None
     def callback(h, _):
         nonlocal hwnd
-        if win32gui.GetWindowText(h) == title:
-            hwnd = h
-    win32gui.EnumWindows(callback, None)
+        try:
+            if win32gui.GetWindowText(h) == title:
+                hwnd = h
+        except Exception:
+            pass
+        return True
+    try:
+        win32gui.EnumWindows(callback, None)
+    except Exception:
+        pass
     return hwnd
 
 def fake_activate(hwnd):

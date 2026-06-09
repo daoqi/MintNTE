@@ -298,31 +298,44 @@ class WindowDetectUI(QWidget):
             self.preview_label.setText("未找到游戏窗口")
 
     def _find_heter_ring_window(self):
-        result = None
-        def callback(hwnd, _):
-            nonlocal result
-            if not win32gui.IsWindowVisible(hwnd): return True
-            title = win32gui.GetWindowText(hwnd)
-            cls = win32gui.GetClassName(hwnd)
-            if cls in EXCLUDED_CLASSES: return True
-            browsers = ["Chrome", "Edge", "Firefox", "Internet Explorer", "Opera"]
-            if any(b in title for b in browsers): return True
-            if "QQ" in title or "TXGuiFoundation" in cls: return True
-            if "异环" in title and cls == "UnrealWindow":
-                result = hwnd; return False
-            return True
-        win32gui.EnumWindows(callback, None)
-        return result
+            result = None
+            def callback(hwnd, _):
+                nonlocal result
+                if result is not None: return True  # already found, keep enumerating
+                if not win32gui.IsWindowVisible(hwnd): return True
+                try:
+                    title = win32gui.GetWindowText(hwnd)
+                    cls = win32gui.GetClassName(hwnd)
+                except Exception:
+                    return True
+                if cls in EXCLUDED_CLASSES: return True
+                browsers = ["Chrome", "Edge", "Firefox", "Internet Explorer", "Opera"]
+                if any(b in title for b in browsers): return True
+                if "QQ" in title or "TXGuiFoundation" in cls: return True
+                if "异环" in title and cls == "UnrealWindow":
+                    result = hwnd
+                return True
+            try:
+                win32gui.EnumWindows(callback, None)
+            except Exception:
+                pass
+            return result
 
     def refresh_combo(self):
-        self.combo_window.clear()
-        def callback(hwnd, _):
-            if win32gui.IsWindowVisible(hwnd):
-                title = win32gui.GetWindowText(hwnd)
-                if title.strip():
-                    self.combo_window.addItem(f"{title} (0x{hwnd:X})", hwnd)
-            return True
-        win32gui.EnumWindows(callback, None)
+            self.combo_window.clear()
+            def callback(hwnd, _):
+                if win32gui.IsWindowVisible(hwnd):
+                    try:
+                        title = win32gui.GetWindowText(hwnd)
+                    except Exception:
+                        return True
+                    if title.strip():
+                        self.combo_window.addItem(f"{title} (0x{hwnd:X})", hwnd)
+                return True
+            try:
+                win32gui.EnumWindows(callback, None)
+            except Exception:
+                pass
 
     def combo_lock(self):
         idx = self.combo_window.currentIndex()
