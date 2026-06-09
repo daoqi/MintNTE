@@ -62,21 +62,23 @@ class PluginCheckThread(QThread):
             req = requests.get(API_URL, headers={"User-Agent": "MintNTE"}, timeout=10, verify=False)
             req.raise_for_status()
             body = req.json().get("body", "")
-            # 调试输出：打印原始 body 内容，方便查看实际匹配情况
-            print("=== 远程 Release body ===")
-            print(body)
-            print("========================")
-            logger.info(f"远程 Release body: {body}")
+            if not body:
+                self.result.emit({})
+                return
 
+            # 优先匹配代码块（```json 或 ```）
             m = re.search(r'```(?:json)?\s*(\{.*?\})\s*```', body, re.DOTALL)
             if m:
-                versions = json.loads(m.group(1))
-                print("解析出的插件版本:", versions)
-                logger.info(f"解析出的插件版本: {versions}")
+                json_str = m.group(1)
             else:
+                # 如果 body 本身就是纯 JSON（无代码块），直接尝试解析整个 body
+                json_str = body.strip()
+
+            try:
+                versions = json.loads(json_str)
+            except Exception:
                 versions = {}
-                print("未匹配到任何插件版本信息")
-                logger.warning("未匹配到任何插件版本信息")
+            logger.info(f"解析到的远程插件版本: {versions}")
             self.result.emit(versions)
         except Exception as e:
             logger.error(f"检查插件更新失败: {e}")
