@@ -1,4 +1,5 @@
 # updater/updater.py
+print("===== 新 updater 已加载 =====")
 import os, sys, json, shutil, tempfile, zipfile, re
 from pathlib import Path
 from datetime import datetime
@@ -63,6 +64,7 @@ class PluginCheckThread(QThread):
             req.raise_for_status()
             body = req.json().get("body", "")
             if not body:
+                print("远程 body 为空")
                 self.result.emit({})
                 return
 
@@ -71,15 +73,22 @@ class PluginCheckThread(QThread):
             if m:
                 json_str = m.group(1)
             else:
-                # 如果 body 本身就是纯 JSON（无代码块），直接尝试解析整个 body
+                # 如果 body 本身就是纯 JSON，直接使用
                 json_str = body.strip()
 
+            # 解析 JSON 得到远程插件版本
             try:
                 versions = json.loads(json_str)
             except Exception:
-                versions = {}
+                print("解析 JSON 失败，body:", body)
+                logger.error(f"解析 JSON 失败: {body}")
+                self.result.emit({})
+                return
+
+            print("emit versions:", versions)
             logger.info(f"解析到的远程插件版本: {versions}")
             self.result.emit(versions)
+
         except Exception as e:
             logger.error(f"检查插件更新失败: {e}")
             self.result.emit({})
