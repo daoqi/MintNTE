@@ -1,8 +1,3 @@
 {
-  "name": "dark_racing",
-  "version": "1.0.1",
-  "description": "黑暗赛车自动挂机",
-  "author": "daoqi",
-  "min_shell_version": "0.0.1",
-  "dependencies": []
+  "dark_racing": "0.0.3"
 }

@@ -11,71 +11,64 @@ from Module.capture.frame_capture import capture_frame
 import ui.services.logui as logui
 
 IMG_DIR = os.path.join("plugins", "dark_racing", "dark_racing_img")
+
 PATH_FIND_ACTIVITY = resource_path(os.path.join(IMG_DIR, "find_activity.bmp"))
 PATH_ESC_HOME = resource_path(os.path.join(IMG_DIR, "activity_esc_home.bmp"))
-PATH_FONT = resource_path(os.path.join(IMG_DIR, "activity_font.bmp"))
 PATH_IMG = resource_path(os.path.join(IMG_DIR, "activity_img.bmp"))
+PATH_DARK_RACING_ENTRY = resource_path(os.path.join(IMG_DIR, "dark_racing_entry.bmp"))
+PATH_DARK_RACING_GO_GAME = resource_path(os.path.join(IMG_DIR, "dark_racing_go_game.bmp"))
 PATH_LEAVE = resource_path(os.path.join(IMG_DIR, "activity_leave.bmp"))
 
 MATCH_THRESH = 0.7
 
-def find_in_region(hwnd, template, left, top, right, bottom, threshold=MATCH_THRESH):
-    if not hwnd or not win32gui.IsWindow(hwnd):
-        return False
-    try:
-        frame = capture_frame(hwnd)
-        if frame is None:
-            return False
-        h, w = frame.shape[:2]
-        x1 = max(0, min(left, w-1))
-        y1 = max(0, min(top, h-1))
-        x2 = max(x1+1, min(right, w))
-        y2 = max(y1+1, min(bottom, h))
-        if x2-x1 < 10 or y2-y1 < 10:
-            return False
-        roi = frame[y1:y2, x1:x2]
-        gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-        tpl = load_template(template)
-        if tpl is None:
-            return False
-        res = cv2.matchTemplate(gray, tpl, cv2.TM_CCOEFF_NORMED)
-        _, max_val, _, _ = cv2.minMaxLoc(res)
-        return max_val >= threshold
-    except Exception as e:
-        logui.error(f"find_in_region 异常: {e}")
-        return False
 
-def click_template_center(hwnd, template, left, top, right, bottom, threshold=MATCH_THRESH):
-    if not hwnd or not win32gui.IsWindow(hwnd):
+def find_in_frame(frame, template, left, top, right, bottom, threshold=MATCH_THRESH):
+    """在传入的 frame 上直接匹配，不重新截图"""
+    if frame is None:
         return False
-    try:
-        frame = capture_frame(hwnd)
-        if frame is None:
-            return False
-        h, w = frame.shape[:2]
-        x1 = max(0, min(left, w-1))
-        y1 = max(0, min(top, h-1))
-        x2 = max(x1+1, min(right, w))
-        y2 = max(y1+1, min(bottom, h))
-        if x2-x1 < 10 or y2-y1 < 10:
-            return False
-        roi = frame[y1:y2, x1:x2]
-        gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-        tpl = load_template(template)
-        if tpl is None:
-            return False
-        res = cv2.matchTemplate(gray, tpl, cv2.TM_CCOEFF_NORMED)
-        _, max_val, _, max_loc = cv2.minMaxLoc(res)
-        if max_val < threshold:
-            return False
-        th, tw = tpl.shape
-        cx = x1 + max_loc[0] + tw//2
-        cy = y1 + max_loc[1] + th//2
-        simulate_mouse_click_relative(hwnd, cx, cy)
-        return True
-    except Exception as e:
-        logui.error(f"click_template_center 异常: {e}")
+    h, w = frame.shape[:2]
+    x1 = max(0, min(left, w - 1))
+    y1 = max(0, min(top, h - 1))
+    x2 = max(x1 + 1, min(right, w))
+    y2 = max(y1 + 1, min(bottom, h))
+    if x2 - x1 < 10 or y2 - y1 < 10:
         return False
+    roi = frame[y1:y2, x1:x2]
+    gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+    tpl = load_template(template)
+    if tpl is None:
+        return False
+    res = cv2.matchTemplate(gray, tpl, cv2.TM_CCOEFF_NORMED)
+    _, max_val, _, _ = cv2.minMaxLoc(res)
+    return max_val >= threshold
+
+
+def click_template_center_from_frame(hwnd, frame, template, left, top, right, bottom, threshold=MATCH_THRESH):
+    """在传入的 frame 上匹配并点击中心，不重新截图"""
+    if frame is None or not hwnd or not win32gui.IsWindow(hwnd):
+        return False
+    h, w = frame.shape[:2]
+    x1 = max(0, min(left, w - 1))
+    y1 = max(0, min(top, h - 1))
+    x2 = max(x1 + 1, min(right, w))
+    y2 = max(y1 + 1, min(bottom, h))
+    if x2 - x1 < 10 or y2 - y1 < 10:
+        return False
+    roi = frame[y1:y2, x1:x2]
+    gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+    tpl = load_template(template)
+    if tpl is None:
+        return False
+    res = cv2.matchTemplate(gray, tpl, cv2.TM_CCOEFF_NORMED)
+    _, max_val, _, max_loc = cv2.minMaxLoc(res)
+    if max_val < threshold:
+        return False
+    th, tw = tpl.shape
+    cx = x1 + max_loc[0] + tw // 2
+    cy = y1 + max_loc[1] + th // 2
+    simulate_mouse_click_relative(hwnd, cx, cy)
+    return True
+
 
 class DarkRacingWorker:
     def __init__(self, stop_event, status_cb, finish_cb):
@@ -83,6 +76,8 @@ class DarkRacingWorker:
         self._status_cb = status_cb
         self._finish_cb = finish_cb
         self._thread = None
+        # 离开按钮冷却，防止重复计数
+        self._last_leave_time = 0
 
     def start(self):
         if self._thread and self._thread.is_alive():
@@ -94,6 +89,7 @@ class DarkRacingWorker:
         complete = 0
         self._status_cb(f"完成次数: {complete}")
         logui.info("黑暗赛车线程启动")
+
         try:
             while not self.stop_event.is_set():
                 hwnd = get_game_hwnd()
@@ -101,76 +97,53 @@ class DarkRacingWorker:
                     time.sleep(0.5)
                     continue
 
-                # 查找活动入口
-                logui.info("查找活动入口...")
-                found_activity = False
-                while not self.stop_event.is_set():
-                    if find_in_region(hwnd, PATH_FIND_ACTIVITY, 1565, 12, 1655, 80):
+                # 每轮只截一次图，所有匹配都在这同一帧上做
+                frame = capture_frame(hwnd)
+                if frame is None:
+                    time.sleep(0.5)
+                    continue
+
+                action_done = False
+
+                # ========== 优先级1：离开按钮（比赛结束） ==========
+                # 3秒冷却，防止界面切换慢导致重复计数
+                if time.time() - self._last_leave_time > 3:
+                    if click_template_center_from_frame(hwnd, frame, PATH_LEAVE, 1563, 990, 1637, 1035):
+                        logui.info("点击离开")
+                        self._last_leave_time = time.time()
+                        complete += 1
+                        self._status_cb(f"完成次数: {complete}")
+                        logui.info(f"完成第 {complete} 次")
+                        time.sleep(2)
+                        action_done = True
+
+                # ========== 优先级2：开始比赛按钮 ==========
+                if not action_done:
+                    if click_template_center_from_frame(hwnd, frame, PATH_DARK_RACING_GO_GAME, 1538, 941, 1823, 1072):
+                        logui.info("点击开始比赛")
+                        time.sleep(1)
+                        action_done = True
+
+                # ========== 优先级3：黑暗赛车入口 ==========
+                if not action_done:
+                    if click_template_center_from_frame(hwnd, frame, PATH_DARK_RACING_ENTRY, 66, 197, 297, 858):
+                        logui.info("点击黑暗赛车入口")
+                        time.sleep(1)
+                        action_done = True
+
+                # ========== 优先级4：活动入口（按F4） ==========
+                if not action_done:
+                    if (find_in_frame(frame, PATH_FIND_ACTIVITY, 1573, 12, 1644, 78) or
+                        find_in_frame(frame, PATH_ESC_HOME, 1573, 12, 1644, 78) or
+                        find_in_frame(frame, PATH_IMG, 24, 30, 95, 92)):
                         logui.info("找到活动入口，按F4")
                         send_key_press(hwnd, 0x73)  # F4
                         time.sleep(3)
-                    else:
-                        logui.info("未找到活动入口，按ESC")
-                        send_key_press(hwnd, 0x1B)
-                        time.sleep(0.5)
+                        action_done = True
 
-                    if find_in_region(hwnd, PATH_ESC_HOME, 1493, 417, 1609, 516):
-                        click_template_center(hwnd, PATH_ESC_HOME, 1493, 417, 1609, 516)
-                        time.sleep(1)
-
-                    if find_in_region(hwnd, PATH_FONT, 93, 33, 211, 86) or \
-                       find_in_region(hwnd, PATH_IMG, 24, 30, 95, 92):
-                        found_activity = True
-                        break
+                if not action_done:
                     time.sleep(0.5)
 
-                if not found_activity or self.stop_event.is_set():
-                    continue
-
-                # 进入比赛，点击固定坐标
-                logui.info("进入比赛界面...")
-                simulate_mouse_click_relative(hwnd, 165,743)
-                time.sleep(0.1)
-                simulate_mouse_click_relative(hwnd, 165,743)
-                time.sleep(0.1)
-                simulate_mouse_click_relative(hwnd, 165, 743)
-                time.sleep(0.1)
-                simulate_mouse_click_relative(hwnd, 165, 743)
-                time.sleep(0.1)
-                simulate_mouse_click_relative(hwnd, 165, 743)
-                time.sleep(0.1)
-                simulate_mouse_click_relative(hwnd, 165, 743)
-                time.sleep(0.1)
-                # 点击开始比赛
-                simulate_mouse_click_relative(hwnd, 1687,1015)
-                time.sleep(0.1)
-                simulate_mouse_click_relative(hwnd, 1687, 1015)
-                time.sleep(0.1)
-                simulate_mouse_click_relative(hwnd, 1687, 1015)
-                time.sleep(0.1)
-                time.sleep(1)
-
-                # 等待离开按钮，最长10分钟
-                enter_time = time.time()
-                while not self.stop_event.is_set() and (time.time() - enter_time) < 600:
-                    hwnd = get_game_hwnd()
-                    if not hwnd or not win32gui.IsWindow(hwnd):
-                        break
-
-                    if find_in_region(hwnd, PATH_LEAVE, 1563, 990, 1637, 1035):
-                        logui.info("检测到离开按钮，点击离开并计数")
-                        if click_template_center(hwnd, PATH_LEAVE, 1563, 990, 1637, 1035):
-                            complete += 1
-                            self._status_cb(f"完成次数: {complete}")
-                            logui.info(f"完成第 {complete} 次")
-                            time.sleep(2)   # 等待界面切换
-                            break
-                    time.sleep(1)
-                else:
-                    logui.warning("等待离开按钮超时（10分钟），退出比赛循环")
-
-                # 短暂休息后继续下一轮
-                time.sleep(1)
         except Exception as e:
             logui.error(f"黑暗赛车异常: {e}")
         finally:

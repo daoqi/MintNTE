@@ -1,13 +1,13 @@
 # updater/updater.py
-print("===== 新 updater 已加载 =====")
-import os, sys, json, shutil, tempfile, zipfile, re
+import os, sys, json, shutil, tempfile, zipfile, re, threading
 from pathlib import Path
 from datetime import datetime
 import requests
-from PyQt5.QtCore import QObject, pyqtSignal, QThread
+from PyQt5.QtCore import QObject, pyqtSignal
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from ui.services.logger import logger
+
 GITHUB_REPO = "daoqi/MintNTE"
 API_URL = f"https://api.github.com/repos/{GITHUB_REPO}/releases/latest"
 PLUGINS_DIR = "plugins"
@@ -28,17 +28,15 @@ def parse_version(v: str):
     except:
         return (0,0,0)
 
-# ---------- 主程序更新线程 ----------
-class CheckUpdateThread(QThread):
-    result = pyqtSignal(int, str)
-
-    def __init__(self, parent=None):
-        super().__init__(parent)
+# ---------- 主程序更新线程（保留 QThread 以保持兼容，但也可改为原生线程）----------
+class CheckUpdateThread(threading.Thread):
+    def __init__(self, callback, parent=None):
+        super().__init__(daemon=True)
+        self._callback = callback
         self._cancel = False
 
     def cancel(self):
         self._cancel = True
-        self.wait(2000)
 
     def run(self):
         if self._cancel: return
@@ -49,14 +47,16 @@ class CheckUpdateThread(QThread):
             data = req.json()
             remote_tag = data["tag_name"].lstrip("v")
             needs = parse_version(remote_tag) > parse_version(local)
-            self.result.emit(1 if needs else 0, remote_tag)
+            self._callback(1 if needs else 0, remote_tag)
         except Exception as e:
             logger.error(f"检查主程序更新失败: {e}")
-            self.result.emit(-1, str(e))
+            self._callback(-1, str(e))
 
-# ---------- 插件更新线程 ----------
-class PluginCheckThread(QThread):
-    result = pyqtSignal(dict)
+# ---------- 插件更新线程（改为 Python 原生线程，避免 QThread 冲突）----------
+class PluginCheckThread(threading.Thread):
+    def __init__(self, callback, parent=None):
+        super().__init__(daemon=True)
+        self._callback = callback
 
     def run(self):
         try:
@@ -64,8 +64,7 @@ class PluginCheckThread(QThread):
             req.raise_for_status()
             body = req.json().get("body", "")
             if not body:
-                print("远程 body 为空")
-                self.result.emit({})
+                self._callback({})
                 return
 
             # 优先匹配代码块（```json 或 ```）
@@ -73,38 +72,31 @@ class PluginCheckThread(QThread):
             if m:
                 json_str = m.group(1)
             else:
-                # 如果 body 本身就是纯 JSON，直接使用
                 json_str = body.strip()
 
-            # 解析 JSON 得到远程插件版本
             try:
                 versions = json.loads(json_str)
             except Exception:
-                print("解析 JSON 失败，body:", body)
                 logger.error(f"解析 JSON 失败: {body}")
-                self.result.emit({})
+                self._callback({})
                 return
 
-            print("emit versions:", versions)
             logger.info(f"解析到的远程插件版本: {versions}")
-            self.result.emit(versions)
-
+            self._callback(versions)
         except Exception as e:
             logger.error(f"检查插件更新失败: {e}")
-            self.result.emit({})
+            self._callback({})
 
-class PluginDownloadThread(QThread):
-    progress = pyqtSignal(int, str)
-    finished = pyqtSignal(bool, str)
-
-    def __init__(self, plugins: dict, parent=None):
-        super().__init__(parent)
+class PluginDownloadThread(threading.Thread):
+    def __init__(self, plugins, progress_cb, finish_cb, parent=None):
+        super().__init__(daemon=True)
         self.plugins = plugins
+        self._progress_cb = progress_cb
+        self._finish_cb = finish_cb
 
     def run(self):
         root = _root()
         try:
-            # 1. 获取 plugins.zip 下载链接
             req = requests.get(API_URL, headers={"User-Agent": "MintNTE"}, timeout=10, verify=False)
             req.raise_for_status()
             assets = req.json().get("assets", [])
@@ -114,11 +106,10 @@ class PluginDownloadThread(QThread):
                     url = a["browser_download_url"]
                     break
             if not url:
-                self.finished.emit(False, "未找到 plugins.zip")
+                self._finish_cb(False, "未找到 plugins.zip")
                 return
 
-            # 2. 下载
-            self.progress.emit(10, "下载插件包...")
+            self._progress_cb(10, "下载插件包...")
             with requests.get(url, stream=True, headers={"User-Agent": "MintNTE"}, verify=False) as r:
                 r.raise_for_status()
                 total = int(r.headers.get('content-length', 0))
@@ -129,17 +120,15 @@ class PluginDownloadThread(QThread):
                     downloaded += len(chunk)
                     if total:
                         p = 10 + int(downloaded / total * 30)
-                        self.progress.emit(p, f"{downloaded//1024}KB / {total//1024}KB")
+                        self._progress_cb(p, f"{downloaded//1024}KB / {total//1024}KB")
                 tmpf.close()
 
-            # 3. 解压
-            self.progress.emit(40, "解压中...")
+            self._progress_cb(40, "解压中...")
             tmpdir = tempfile.mkdtemp()
             with zipfile.ZipFile(tmpf.name, 'r') as zf:
                 zf.extractall(tmpdir)
             os.unlink(tmpf.name)
 
-            # 4. 备份并替换插件目录
             plugins_root = root / PLUGINS_DIR
             backup_root = root / "plugins_backup" / datetime.now().strftime("%Y%m%d_%H%M%S")
             for pname in self.plugins:
@@ -158,20 +147,20 @@ class PluginDownloadThread(QThread):
                 logger.info(f"插件 {pname} 已更新")
 
             shutil.rmtree(tmpdir)
-            self.progress.emit(100, "完成")
-            self.finished.emit(True, "插件更新成功，请重启程序")
+            self._progress_cb(100, "完成")
+            self._finish_cb(True, "插件更新成功，请重启程序")
         except Exception as e:
             logger.error(f"插件更新失败: {e}")
-            self.finished.emit(False, str(e))
+            self._finish_cb(False, str(e))
 
 # ---------- 统一 Updater ----------
 class Updater(QObject):
-    checkResult = pyqtSignal(int, str)          # 主程序更新结果
-    pluginCheckResult = pyqtSignal(dict)        # 远程插件版本
+    checkResult = pyqtSignal(int, str)
+    pluginCheckResult = pyqtSignal(dict)
     progress = pyqtSignal(int)
     status = pyqtSignal(str)
-    pluginProgress = pyqtSignal(int, str)       # 下载进度
-    pluginFinished = pyqtSignal(bool, str)      # 下载完成
+    pluginProgress = pyqtSignal(int, str)
+    pluginFinished = pyqtSignal(bool, str)
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -181,26 +170,31 @@ class Updater(QObject):
         self._remote_versions = {}
 
     def cancel(self):
-        for t in [self._shell_thread, self._plugin_thread, self._download_thread]:
-            if t and t.isRunning():
-                t.terminate()
-                t.wait(2000)
+        if self._shell_thread and self._shell_thread.is_alive():
+            self._shell_thread.cancel()
+        if self._plugin_thread and self._plugin_thread.is_alive():
+            # 无法直接取消，但线程会在下次循环检查
+            pass
+        if self._download_thread and self._download_thread.is_alive():
+            pass
 
     def get_local_version(self):
         return shell_version()
 
-    def check_for_update(self):               # 主程序更新
-        if self._shell_thread and self._shell_thread.isRunning():
+    def check_for_update(self):
+        if self._shell_thread and self._shell_thread.is_alive():
             return
-        self._shell_thread = CheckUpdateThread(self)
-        self._shell_thread.result.connect(self.checkResult)
+        self._shell_thread = CheckUpdateThread(
+            lambda status, info: self.checkResult.emit(status, info)
+        )
         self._shell_thread.start()
 
-    def check_plugin_updates(self):           # 插件更新检查
-        if self._plugin_thread and self._plugin_thread.isRunning():
+    def check_plugin_updates(self):
+        if self._plugin_thread and self._plugin_thread.is_alive():
             return
-        self._plugin_thread = PluginCheckThread(self)
-        self._plugin_thread.result.connect(self._on_plugin_versions)
+        self._plugin_thread = PluginCheckThread(
+            lambda versions: self._on_plugin_versions(versions)
+        )
         self._plugin_thread.start()
 
     def _on_plugin_versions(self, versions):
@@ -208,12 +202,14 @@ class Updater(QObject):
         self.pluginCheckResult.emit(versions)
 
     def download_plugin_updates(self, names: list):
-        if self._download_thread and self._download_thread.isRunning():
+        if self._download_thread and self._download_thread.is_alive():
             return
         targets = {n: self._remote_versions.get(n, "0.0.0") for n in names}
-        self._download_thread = PluginDownloadThread(targets, self)
-        self._download_thread.progress.connect(self.pluginProgress)
-        self._download_thread.finished.connect(self.pluginFinished)
+        self._download_thread = PluginDownloadThread(
+            targets,
+            lambda p, msg: self.pluginProgress.emit(p, msg),
+            lambda success, msg: self.pluginFinished.emit(success, msg)
+        )
         self._download_thread.start()
 
     def perform_update(self):

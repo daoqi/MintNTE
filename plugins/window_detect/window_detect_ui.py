@@ -40,7 +40,7 @@ EXCLUDED_CLASSES = [
     "ApplicationFrameWindow",
 ]
 
-class WindowDetectUI(QWidget):
+class WindowDetectUI(QWidget):   # ← 关键修复：确保类名是 WindowDetectUI
     def __init__(self, parent=None):
         super().__init__(parent)
         self.target_hwnd = None
@@ -56,9 +56,6 @@ class WindowDetectUI(QWidget):
         self.drag_active = False
 
         self.init_ui()
-        #
-        # if get_detect_mode() == 0:
-        #     self.auto_detect()
 
     # ========== UI 构建 ==========
     def init_ui(self):
@@ -104,8 +101,8 @@ class WindowDetectUI(QWidget):
         # 自动获取按钮（缩小版本）
         self.auto_btn = QPushButton(" 重新获取")
         self.auto_btn.setMaximumWidth(80)
-        self.auto_btn.setFixedHeight(20)                     # 固定高度，更紧凑
-        self.auto_btn.setStyleSheet("padding: 0px 10px;")    # 减小左右内边距
+        self.auto_btn.setFixedHeight(20)
+        self.auto_btn.setStyleSheet("padding: 0px 10px;")
         self.auto_btn.clicked.connect(self.auto_detect)
         mode_layout.addWidget(self.auto_btn)
 
@@ -268,7 +265,7 @@ class WindowDetectUI(QWidget):
             QComboBox { background-color: #2a2a3a; color: #0ff; border: 1px solid #0ff; padding: 3px; }
         """)
 
-    # ========== 功能方法（同前） ==========
+    # ========== 功能方法 ==========
     def on_capture_changed(self, idx):
         set_capture_mode({0: 0, 1: 1, 2: 2}[idx])
 
