@@ -1,0 +1,6 @@
+{
+  "version": "0.0.11",
+  "gray": 10,
+  "release_note": "## 测试更新\n- 本次更新用于测试自动更新流程",
+  "download_url_template": "https://github.com/daoqi/MintNTE/releases/latest/download/TrustNTE_v{version}.zip"
+}
