@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "items": [
+    {
+      "title": "测试兑奖码并不能兑换",
+      "codes": [
+        "NTE666",
+        "NTE888",
+        "MINT520"
+      ]
+    },
+    {
+      "title": "测试兑奖码并不能兑换",
+      "codes": [
+        "UPDATE120",
+        "THANKYOU"
+      ]
+    }
+  ]
+}
