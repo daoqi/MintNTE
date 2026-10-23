@@ -1,20 +1,15 @@
 {
-  "version": "1.0.0",
-  "items": [
+  "Version": "1.0.2",
+  "Items": [
     {
-      "title": "测试兑奖码并不能兑换",
-      "codes": [
-        "NTE666",
-        "NTE888",
-        "MINT520"
-      ]
+      "Title": "[国服] 国服专属兑换码",
+      "Server": "CN",
+      "Codes": [ "NTE666", "NTE888" ]
     },
     {
-      "title": "测试兑奖码并不能兑换",
-      "codes": [
-        "UPDATE120",
-        "THANKYOU"
-      ]
+      "Title": "[国际服] 国际服专属兑换码",
+      "Server": "Global",
+      "Codes": [ "GLOBAL123", "HELLOWORLD" ]
     }
   ]
 }
