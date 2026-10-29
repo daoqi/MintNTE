@@ -2,14 +2,14 @@
   "Version": "1.0.2",
   "Items": [
     {
-      "Title": "[国服] 国服专属兑换码",
+      "Title": "【国服】与【国际服】兑换码是通用的",
       "Server": "CN",
-      "Codes": [ "NTE666", "NTE888" ]
+      "Codes": [ "EXENORESPONSE", "HIOLDFRIEND", "INVALIDNUMBER" ]
     },
     {
-      "Title": "[国际服] 国际服专属兑换码",
+      "Title": "【国服】与【国际服】兑换码是通用的",
       "Server": "Global",
-      "Codes": [ "GLOBAL123", "HELLOWORLD" ]
+      "Codes": [ "EXENORESPONSE", "HIOLDFRIEND", "INVALIDNUMBER" ]
     }
   ]
 }

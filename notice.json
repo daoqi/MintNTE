@@ -1,6 +1,9 @@
 {
-  "version": "0.0.11",
+  "version": "0.0.10",
   "gray": 10,
   "release_note": "## 测试更新\n- 本次更新用于测试自动更新流程",
-  "download_url_template": "https://github.com/daoqi/MintNTE/releases/latest/download/TrustNTE_v{version}.zip"
+  "download_url_template": "https://github.com/daoqi/MintNTE/releases/download/v{version}/TrustNTE_v{version}.zip",
+  "sha256": {
+    "0.0.11": "在这里填 TrustNTE_v0.0.11.zip 的 SHA256"
+  }
 }
